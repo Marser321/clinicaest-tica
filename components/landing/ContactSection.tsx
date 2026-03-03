@@ -3,8 +3,43 @@
 import { motion } from 'motion/react';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from 'lucide-react';
+import { useState } from 'react';
 
 export function ContactSection() {
+    const [formData, setFormData] = useState({
+        nombre: '',
+        telefono: '',
+        servicio: '',
+        mensaje: ''
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        setFormData({
+            ...formData,
+            [e.target.id]: e.target.value
+        });
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        // Número de la clínica (asegurate de configurarlo bien)
+        const numeroClinica = '59800000000'; // EJ: 59899123456
+
+        let textoPredefinido = `Hola! Soy ${formData.nombre}.`;
+
+        if (formData.servicio) {
+            textoPredefinido += ` Me interesa el servicio de ${formData.servicio}.`;
+        }
+
+        if (formData.mensaje) {
+            textoPredefinido += `\n\nMi consulta es: ${formData.mensaje}`;
+        }
+
+        const url = `https://wa.me/${numeroClinica}?text=${encodeURIComponent(textoPredefinido)}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <section id="contacto" className="section-padding bg-white relative overflow-hidden">
             {/* Decoración */}
@@ -22,7 +57,7 @@ export function ContactSection() {
                     </h2>
                     <p className="text-slate-500 max-w-xl mx-auto">
                         Estamos para ayudarte. Escribinos por WhatsApp o completá el formulario
-                        y te respondemos a la brevedad.
+                        y te responderemos a la brevedad.
                     </p>
                 </AnimatedSection>
 
@@ -81,7 +116,7 @@ export function ContactSection() {
                     <AnimatedSection direction="right" delay={0.2}>
                         <form
                             className="bg-white rounded-2xl p-6 sm:p-8 space-y-5 border border-slate-100 shadow-[0_8px_40px_rgba(15,23,42,0.06)]"
-                            onSubmit={(e) => e.preventDefault()}
+                            onSubmit={handleSubmit}
                         >
                             <div className="grid sm:grid-cols-2 gap-4">
                                 <div>
@@ -91,6 +126,9 @@ export function ContactSection() {
                                     <input
                                         id="nombre"
                                         type="text"
+                                        required
+                                        value={formData.nombre}
+                                        onChange={handleChange}
                                         placeholder="Tu nombre"
                                         className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-100 transition-colors"
                                     />
@@ -102,6 +140,8 @@ export function ContactSection() {
                                     <input
                                         id="telefono"
                                         type="tel"
+                                        value={formData.telefono}
+                                        onChange={handleChange}
                                         placeholder="Tu teléfono"
                                         className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-100 transition-colors"
                                     />
@@ -114,20 +154,22 @@ export function ContactSection() {
                                 </label>
                                 <select
                                     id="servicio"
+                                    value={formData.servicio}
+                                    onChange={handleChange}
                                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-100 transition-colors appearance-none"
                                 >
                                     <option value="">Seleccioná un servicio</option>
-                                    <option value="blanqueamiento">Blanqueamiento Dental</option>
-                                    <option value="bruxismo">Bruxismo</option>
-                                    <option value="carillas">Carillas Dentales</option>
-                                    <option value="cirugia">Cirugía Bucal</option>
-                                    <option value="implantes">Implantes Dentales</option>
-                                    <option value="general">Odontología General</option>
-                                    <option value="ninos">Odontología para Niños</option>
-                                    <option value="ortodoncia">Ortodoncia</option>
-                                    <option value="periodoncia">Periodoncia</option>
-                                    <option value="rayos">Rayos X</option>
-                                    <option value="conducto">Tratamiento de Conducto</option>
+                                    <option value="Blanqueamiento Dental">Blanqueamiento Dental</option>
+                                    <option value="Bruxismo">Bruxismo</option>
+                                    <option value="Carillas Dentales">Carillas Dentales</option>
+                                    <option value="Cirugía Bucal">Cirugía Bucal</option>
+                                    <option value="Implantes Dentales">Implantes Dentales</option>
+                                    <option value="Odontología General">Odontología General</option>
+                                    <option value="Odontología para Niños">Odontología para Niños</option>
+                                    <option value="Ortodoncia">Ortodoncia</option>
+                                    <option value="Periodoncia">Periodoncia</option>
+                                    <option value="Rayos X">Rayos X</option>
+                                    <option value="Tratamiento de Conducto">Tratamiento de Conducto</option>
                                 </select>
                             </div>
 
@@ -138,6 +180,9 @@ export function ContactSection() {
                                 <textarea
                                     id="mensaje"
                                     rows={4}
+                                    required
+                                    value={formData.mensaje}
+                                    onChange={handleChange}
                                     placeholder="Contanos en qué podemos ayudarte..."
                                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-100 transition-colors resize-none"
                                 />
