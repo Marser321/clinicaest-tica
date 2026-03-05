@@ -1,8 +1,11 @@
-import { AgendaCalendar } from '@/components/dashboard/AgendaCalendar';
+'use client';
 
-export const metadata = {
-    title: 'Agenda | OdontoPro CRM',
-};
+import { AgendaCalendar } from '@/components/dashboard/AgendaCalendar';
+import { toast } from 'sonner';
+
+// export const metadata = {
+//     title: 'Agenda | OdontoPro CRM',
+// };
 
 export default function AgendaPage() {
     return (
@@ -12,7 +15,7 @@ export default function AgendaPage() {
                     <h1 className="text-3xl font-display font-bold">Agenda Odontológica</h1>
                     <p className="text-slate-400 mt-1">Gestiona los turnos y sillones de manera eficiente.</p>
                 </div>
-                <button className="btn-primary">
+                <button onClick={() => toast.info('Formulario de Nuevo Turno en construcción.')} className="btn-primary">
                     Nuevo Turno
                 </button>
             </div>

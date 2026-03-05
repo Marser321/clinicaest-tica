@@ -2,9 +2,10 @@
 
 import { useParams } from 'next/navigation';
 import { Odontogram } from '@/components/dashboard/Odontogram';
-import { ArrowLeft, User, Phone, Mail, Calendar, Activity, AlertCircle, Clock, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, Phone, Mail, Calendar, Activity, AlertCircle, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import { toast } from 'sonner';
 
 export default function FichaPacientePage() {
     const params = useParams();
@@ -42,8 +43,8 @@ export default function FichaPacientePage() {
                     <p className="text-slate-400 text-sm mt-1">Ficha Clínica / CI: {patient.document}</p>
                 </div>
                 <div className="ml-auto flex gap-3">
-                    <button className="btn-secondary">Editar Perfil</button>
-                    <button className="btn-primary">Nueva Cita</button>
+                    <button onClick={() => toast.info('La edición de perfil se implementará en la próxima fase.')} className="btn-secondary">Editar Perfil</button>
+                    <button onClick={() => toast.info('Redirigiendo a reserva de nueva cita...')} className="btn-primary">Nueva Cita</button>
                 </div>
             </motion.div>
 
@@ -154,7 +155,7 @@ export default function FichaPacientePage() {
                                     Paciente acude por dolor agudo en cuadrante superior derecho al frío. Se indica radiografía periapical. Diagnóstico presuntivo: Pulpitis irreversible en pieza 16.
                                 </p>
                                 <div className="mt-3 flex items-center gap-2 text-xs">
-                                    <button className="text-red-500 hover:text-white transition-colors flex items-center gap-1">
+                                    <button onClick={() => toast.warning('Visor DICOM en mantenimiento.')} className="text-red-500 hover:text-white transition-colors flex items-center gap-1">
                                         Ver Radiografía Adjunta 📎
                                     </button>
                                 </div>

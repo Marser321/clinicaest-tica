@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { CreditCard, CheckCircle2, Star, TrendingUp, Users, Plus, ShieldCheck } from 'lucide-react';
+import { Plus, TrendingUp, Users, Star, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { toast } from 'sonner';
 
 // Planes de Membresía Predeterminados (Mock)
 const MOCK_PLANS = [
@@ -62,6 +63,7 @@ export default function MembresiasPage() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="btn-primary flex items-center gap-2"
+                    onClick={() => toast.info('Módulo de Creación de Planes en desarrollo.')}
                 >
                     <Plus size={18} />
                     <span>Crear Nuevo Plan</span>
@@ -154,6 +156,7 @@ export default function MembresiasPage() {
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
+                                onClick={() => toast.info(`La edición del plan "${plan.name}" se habilitará en la próxima versión.`)}
                                 className={`w-full py-3 rounded-xl text-sm font-bold transition-transform ${plan.isPopular ? 'bg-red-500 text-white' : 'bg-white/5 border border-white/10 text-white hover:bg-white/10'}`}
                             >
                                 Editar Plan

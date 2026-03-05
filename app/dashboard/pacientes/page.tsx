@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Search, Plus, User, Phone, Mail, FileText } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import { toast } from 'sonner';
 
 const MOCK_PATIENTS = [
     { id: '1', name: 'Ana Gómez', document: '4.555.333-2', phone: '099 123 456', lastVisit: '12 Nov 2026', status: 'active' },
@@ -30,6 +31,7 @@ export default function PacientesPage() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="btn-primary flex items-center gap-2"
+                    onClick={() => toast.info('Registro de pacientes en desarrollo.')}
                 >
                     <Plus size={18} />
                     <span>Nuevo Paciente</span>

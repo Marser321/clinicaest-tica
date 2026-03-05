@@ -38,6 +38,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { Toaster } from 'sonner';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${inter.variable} ${jakarta.variable}`}>
@@ -45,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <InsforgeProvider>
           {children}
         </InsforgeProvider>
+        <Toaster theme="dark" position="top-center" toastOptions={{ style: { background: '#09090b', border: '1px solid #dc2626', color: '#fff' } }} />
       </body>
     </html>
   );
