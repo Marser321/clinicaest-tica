@@ -2,10 +2,11 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Calendar, Users, CreditCard, Settings, LayoutDashboard, User } from 'lucide-react';
+import { Calendar, Users, CreditCard, Settings, LayoutDashboard, User, Inbox } from 'lucide-react';
 
 const sidebarLinks = [
     { icon: LayoutDashboard, label: 'Resumen', href: '/dashboard' },
+    { icon: Inbox, label: 'Solicitudes', href: '/dashboard/solicitudes' },
     { icon: Calendar, label: 'Agenda', href: '/dashboard/agenda' },
     { icon: Users, label: 'Pacientes', href: '/dashboard/pacientes' },
     { icon: CreditCard, label: 'Membresías', href: '/dashboard/membresias' },
