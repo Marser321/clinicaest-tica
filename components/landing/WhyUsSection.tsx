@@ -40,12 +40,12 @@ const diferenciadores = [
     {
         icono: Cpu,
         titulo: 'Tecnología Avanzada',
-        descripcion: 'Radiografías digitales, planificación 3D para implantes e instrumental rotatorio de última generación.',
+        descripcion: 'Dermapen, láser de última generación, y aparatología de vanguardia para resultados superiores.',
     },
     {
         icono: Clock,
         titulo: 'Experiencia Comprobada',
-        descripcion: 'Más de 15 años de trayectoria con formación especializada en Udelar y Ucudal.',
+        descripcion: 'Más de 15 años de trayectoria con formación especializada universitaria en medicina estética.',
     },
     {
         icono: Heart,
@@ -55,7 +55,7 @@ const diferenciadores = [
     {
         icono: Users,
         titulo: 'Atención Integral',
-        descripcion: '11 especialidades bajo un mismo techo, desde niños hasta adultos mayores.',
+        descripcion: 'Múltiples especialidades bajo un mismo techo, buscando siempre resaltar tu belleza natural.',
     },
 ];
 

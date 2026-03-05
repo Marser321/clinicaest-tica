@@ -159,17 +159,13 @@ export function ContactSection() {
                                     className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all appearance-none [&>option]:bg-[#1A1A1A]"
                                 >
                                     <option value="">Seleccioná un servicio</option>
-                                    <option value="Blanqueamiento Dental">Blanqueamiento Dental</option>
-                                    <option value="Bruxismo">Bruxismo</option>
-                                    <option value="Carillas Dentales">Carillas Dentales</option>
-                                    <option value="Cirugía Bucal">Cirugía Bucal</option>
-                                    <option value="Implantes Dentales">Implantes Dentales</option>
-                                    <option value="Odontología General">Odontología General</option>
-                                    <option value="Odontología para Niños">Odontología para Niños</option>
-                                    <option value="Ortodoncia">Ortodoncia</option>
-                                    <option value="Periodoncia">Periodoncia</option>
-                                    <option value="Rayos X">Rayos X</option>
-                                    <option value="Tratamiento de Conducto">Tratamiento de Conducto</option>
+                                    <option value="Toxina Botulínica">Toxina Botulínica</option>
+                                    <option value="Rellenos Dérmicos">Rellenos Dérmicos</option>
+                                    <option value="Limpieza Facial">Limpieza Facial</option>
+                                    <option value="Depilación Láser">Depilación Láser</option>
+                                    <option value="Modelado Corporal">Modelado Corporal</option>
+                                    <option value="Bioestimuladores">Bioestimuladores</option>
+                                    <option value="Peeling Médico">Peeling Médico</option>
                                 </select>
                             </div>
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { Odontogram } from '@/components/dashboard/Odontogram';
+
 import { ArrowLeft, Phone, Mail, Calendar, Activity, AlertCircle, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
@@ -109,14 +109,16 @@ export default function FichaPacientePage() {
                     transition={{ delay: 0.2 }}
                     className="xl:col-span-2 flex flex-col gap-6"
                 >
-                    {/* Odontograma */}
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-1 relative overflow-hidden">
+                    {/* Foto del Paciente Gnerica (reemplaza Odontograma) */}
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 relative overflow-hidden flex flex-col items-center justify-center min-h-[300px]">
                         <div className="absolute top-0 right-0 p-4 z-10">
                             <h3 className="font-display font-semibold text-white bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 shadow-xl">
-                                Odontograma Actual
+                                Análisis Facial / Corporal
                             </h3>
                         </div>
-                        <Odontogram />
+                        <div className="text-slate-500 text-sm italic mt-8 text-center max-w-sm">
+                            El módulo de registro fotográfico 3D y mediciones corporales se habilitará próximamente.
+                        </div>
                     </div>
 
                     {/* Historial de Evoluciones (Timeline) */}
@@ -131,16 +133,16 @@ export default function FichaPacientePage() {
                             <div className="relative">
                                 <div className="absolute -left-[31px] w-4 h-4 rounded-full bg-emerald-500 border-4 border-[#0f0f13] shadow-[0_0_10px_rgba(16,185,129,0.4)]"></div>
                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                                    <h4 className="font-medium text-emerald-400">Restauración Pieza 21</h4>
+                                    <h4 className="font-medium text-emerald-400">Aplicación Toxina Botulínica</h4>
                                     <span className="flex items-center gap-1 text-xs font-mono text-slate-500 bg-white/5 px-2 py-1 rounded-md w-fit">
                                         <Clock size={12} /> Hace 2 semanas
                                     </span>
                                 </div>
                                 <p className="text-sm text-slate-300 leading-relaxed">
-                                    Se realizó resina compuesta fotocurable en pieza 21 por caries clase IV. Aislamiento absoluto. Pulido de alto brillo. Ausencia de dolor a la percusión post-operatoria.
+                                    Se aplicaron 40 unidades de Botox en tercio superior (frente, entrecejo y patas de gallo). Sin complicaciones ni hematomas visibles post-operatorias.
                                 </p>
                                 <div className="mt-3 flex items-center gap-2">
-                                    <span className="text-xs bg-black/50 border border-white/10 text-slate-400 px-2.5 py-1 rounded-lg">Dr. Principal</span>
+                                    <span className="text-xs bg-black/50 border border-white/10 text-slate-400 px-2.5 py-1 rounded-lg">Dr(a). Especialista</span>
                                     <span className="text-xs bg-black/50 border border-white/10 text-slate-400 px-2.5 py-1 rounded-lg">Consentimiento Firmado ✔</span>
                                 </div>
                             </div>
@@ -149,17 +151,17 @@ export default function FichaPacientePage() {
                             <div className="relative">
                                 <div className="absolute -left-[31px] w-4 h-4 rounded-full bg-red-500 border-4 border-[#0f0f13] shadow-[0_0_10px_rgba(239,68,68,0.4)]"></div>
                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                                    <h4 className="font-medium text-red-400">Diagnóstico Inicial Triage</h4>
+                                    <h4 className="font-medium text-red-400">Consulta Inicial de Evaluación</h4>
                                     <span className="flex items-center gap-1 text-xs font-mono text-slate-500 bg-white/5 px-2 py-1 rounded-md w-fit">
                                         <Clock size={12} /> 12 Nov, 2026
                                     </span>
                                 </div>
                                 <p className="text-sm text-slate-300 leading-relaxed">
-                                    Paciente acude por dolor agudo en cuadrante superior derecho al frío. Se indica radiografía periapical. Diagnóstico presuntivo: Pulpitis irreversible en pieza 16.
+                                    Paciente acude con interés en atenuación de líneas de expresión dinámicas. Piel fototipo III, signos leves de fotoenvejecimiento.
                                 </p>
                                 <div className="mt-3 flex items-center gap-2 text-xs">
-                                    <button onClick={() => toast.warning('Visor DICOM en mantenimiento.')} className="text-red-500 hover:text-white transition-colors flex items-center gap-1">
-                                        Ver Radiografía Adjunta 📎
+                                    <button onClick={() => toast.warning('Visor de imágenes en desarrollo.')} className="text-red-500 hover:text-white transition-colors flex items-center gap-1">
+                                        Ver Registro Fotográfico 📎
                                     </button>
                                 </div>
                             </div>

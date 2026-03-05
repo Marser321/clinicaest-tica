@@ -7,7 +7,7 @@ export default function DashboardPage() {
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-3xl font-display font-bold">Portal de Gestión</h1>
-                    <p className="text-slate-400 mt-1">Bienvenido a la demo de OdontoPro CRM</p>
+                    <p className="text-slate-400 mt-1">Bienvenido a la demo de AestheticPro CRM</p>
                 </div>
             </div>
 
@@ -17,7 +17,7 @@ export default function DashboardPage() {
                         <Calendar size={24} />
                     </div>
                     <h2 className="text-xl font-medium mb-2 text-white group-hover:text-red-400 transition-colors">Ver Agenda</h2>
-                    <p className="text-slate-400 text-sm">Gestioná turnos y sillones odontológicos con datos en tiempo real de la base de datos.</p>
+                    <p className="text-slate-400 text-sm">Gestioná turnos y consultorios estéticos con datos en tiempo real de la base de datos.</p>
                 </Link>
 
                 <Link href="/dashboard/pacientes" className="bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-black/40 transition-all rounded-2xl p-6 group">
@@ -25,7 +25,7 @@ export default function DashboardPage() {
                         <Users size={24} />
                     </div>
                     <h2 className="text-xl font-medium mb-2 text-white group-hover:text-blue-400 transition-colors">Directorio Clínico</h2>
-                    <p className="text-slate-400 text-sm">Explora las historias clínicas interactivas, odontogramas y evolución de los pacientes.</p>
+                    <p className="text-slate-400 text-sm">Explora las historias clínicas interactivas faciales y corporales, con fotos de antes y después.</p>
                 </Link>
 
                 <Link href="/dashboard/membresias" className="bg-white/5 border border-white/10 hover:border-emerald-500/50 hover:bg-black/40 transition-all rounded-2xl p-6 group">

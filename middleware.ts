@@ -2,7 +2,7 @@ import { InsforgeMiddleware } from '@insforge/nextjs/middleware';
 
 export default InsforgeMiddleware({
     baseUrl: process.env.NEXT_PUBLIC_INSFORGE_BASE_URL || 'https://eizdi5ax.us-west.insforge.app',
-    publicRoutes: ['/(.*)'], // Todas las rutas públicas (Bypass de Auth para la Demo)
+    publicRoutes: ['/', '/servicios/(.*)'], // Rutas públicas explícitas
 });
 
 export const config = {

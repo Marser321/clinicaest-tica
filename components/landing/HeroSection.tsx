@@ -14,7 +14,7 @@ export function HeroSection() {
             <div className="absolute inset-0 z-0">
                 <Image
                     src="/images/hero-bg.png"
-                    alt="Clínica Dental Moderna Premium"
+                    alt="Clínica Estética Moderna Premium"
                     fill
                     className="object-cover object-center opacity-80"
                     priority
@@ -75,7 +75,7 @@ export function HeroSection() {
                         >
                             <Sparkles size={14} className="text-red-400" />
                             <span className="text-xs font-semibold text-red-50 tracking-wide uppercase">
-                                Especialistas en Implantes y Ortodoncia
+                                Especialistas en Medicina Estética
                             </span>
                         </motion.div>
 
@@ -86,7 +86,7 @@ export function HeroSection() {
                             transition={{ delay: 0.5, duration: 0.7, ease: [0.25, 0.8, 0.25, 1] }}
                             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6 text-white drop-shadow-lg"
                         >
-                            Tu sonrisa merece{' '}
+                            Tu belleza merece{' '}
                             <span className="text-gradient">atención</span>{' '}
                             <br className="hidden sm:block" />
                             de{' '}
@@ -100,9 +100,9 @@ export function HeroSection() {
                             transition={{ delay: 0.7, duration: 0.6 }}
                             className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed drop-shadow-md"
                         >
-                            OdontoPro — Odontología integral con especialización en
-                            cirugía sobre implantes y rehabilitación estética. Nuestro equipo de
-                            especialistas te asegura una atención de primer nivel.
+                            AestheticPro — Estética integral con especialización en
+                            tratamientos faciales y corporales no invasivos. Nuestro equipo de
+                            profesionales te asegura una atención de primer nivel y resultados naturales.
                         </motion.p>
 
                         {/* CTAs */}
@@ -165,8 +165,8 @@ export function HeroSection() {
                                 className="w-full h-full relative object-contain drop-shadow-[0_0_60px_rgba(220,38,38,0.2)]"
                             >
                                 <Image
-                                    src="/images/hero_3d_tooth.png"
-                                    alt="Modelo 3D de Diente Premium"
+                                    src="/images/hero_3d_aesthetic.png"
+                                    alt="Estética y Cuidado Premium"
                                     fill
                                     className="object-contain"
                                     priority

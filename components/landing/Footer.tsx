@@ -11,16 +11,16 @@ export function Footer() {
                     <div className="sm:col-span-2 lg:col-span-1">
                         <div className="flex items-center gap-3 mb-4">
                             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-900 flex items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.3)] border border-red-500/20">
-                                <span className="text-white font-display font-bold text-lg">OP</span>
+                                <span className="text-white font-display font-bold text-lg">AP</span>
                             </div>
                             <div>
-                                <span className="font-display font-bold text-sm text-white">OdontoPro</span>
-                                <p className="text-xs text-slate-400 -mt-0.5">Clínica Dental</p>
+                                <span className="font-display font-bold text-sm text-white">AestheticPro</span>
+                                <p className="text-xs text-slate-400 -mt-0.5">Clínica Estética</p>
                             </div>
                         </div>
                         <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-                            Odontología integral con especialización en implantes, ortodoncia y rehabilitación
-                            estética. Nuestro equipo trabaja para cuidar tu sonrisa.
+                            Medicina estética avanzada con médicos especialistas en tratamientos faciales y corporales.
+                            Cuidamos tu bienestar integral.
                         </p>
                     </div>
 
@@ -70,7 +70,7 @@ export function Footer() {
                         <ul className="space-y-2.5 text-slate-400 text-sm">
                             <li>📍 Av. Principal 1234, Uruguay</li>
                             <li>📞 +598 0000 0000</li>
-                            <li>✉️ contacto@odontopro.uy</li>
+                            <li>✉️ contacto@aestheticpro.uy</li>
                             <li>🕐 Lun-Vie: 9:00 - 19:00</li>
                         </ul>
                     </div>
@@ -79,7 +79,7 @@ export function Footer() {
                 {/* Bottom bar */}
                 <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <p className="text-slate-500 text-xs">
-                        © {new Date().getFullYear()} OdontoPro Clínica Dental. Todos los derechos reservados.
+                        © {new Date().getFullYear()} AestheticPro Clínica Estética. Todos los derechos reservados.
                     </p>
                     <p className="text-slate-500 text-xs flex items-center gap-1">
                         Hecho por M Morera Agency

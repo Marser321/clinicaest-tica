@@ -27,6 +27,9 @@ export function SplineScene({
 
     useEffect(() => {
         setIsClient(true);
+    }, []);
+
+    useEffect(() => {
         // Timeout para forzar timeout si Spline no responde por error 403 o red
         const timer = setTimeout(() => {
             if (!isLoaded) {
@@ -48,7 +51,7 @@ export function SplineScene({
     };
 
     // Componente de imagen estática de respaldo
-    const FallbackView = () => (
+    const renderFallback = () => (
         <div className={`relative w-full h-full flex items-center justify-center ${className} animate-in fade-in duration-500`}>
             {fallbackImageSrc && (
                 <Image
@@ -63,7 +66,7 @@ export function SplineScene({
 
     // Si hay error reportado internamente
     if (hasError && fallbackImageSrc) {
-        return <FallbackView />;
+        return renderFallback();
     }
 
     return (
@@ -86,7 +89,7 @@ export function SplineScene({
             )}
 
             {/* ErrorBoundary exterior por si el modelo 403 crashea el módulo react-spline */}
-            <ErrorBoundary fallback={<FallbackView />}>
+            <ErrorBoundary fallback={renderFallback()}>
                 <div className={`w-full h-full transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
                     {isClient && (
                         <Spline

@@ -9,299 +9,200 @@ export interface Servicio {
     descripcionLarga: string;
     beneficios: string[];
     proceso: { paso: string; detalle: string }[];
+    riesgos: string[];
     icono: string; // nombre del icono Lucide
     color: string; // clase de color Tailwind
     colorHex: string; // para efectos de glow
-    splineUrl?: string; // URL del modelo 3D interactivo
+    imagen: string; // Imagen principal del servicio
 }
 
 export const servicios: Servicio[] = [
     {
-        slug: 'blanqueamiento-dental',
-        titulo: 'Blanqueamiento Dental',
+        slug: 'toxina-botulinica',
+        titulo: 'Toxina Botulínica',
         descripcionCorta:
-            'Recuperá el blanco natural de tu sonrisa con técnicas profesionales seguras y resultados visibles desde la primera sesión.',
+            'Atenuá arrugas y líneas de expresión con resultados naturales y sutiles para un rostro rejuvenecido.',
         descripcionLarga:
-            'Nuestro blanqueamiento dental profesional utiliza geles de última generación activados con luz LED de alta potencia. A diferencia de los kits caseros, el tratamiento es supervisado por nuestros especialistas para garantizar resultados uniformes de hasta 8 tonos más blancos, sin dañar el esmalte ni causar sensibilidad prolongada. Ideal para eliminar manchas de café, té, vino o tabaco.',
+            'La aplicación de Toxina Botulínica (Botox) es el tratamiento preventivo y correctivo por excelencia para las arrugas dinámicas del tercio superior del rostro. Nuestro equipo médico especializado aplica microinyecciones precisas para relajar los músculos que causan las arrugas, manteniendo la naturalidad y expresividad de tu mirada. El procedimiento es rápido, indoloro y no requiere tiempo de recuperación.',
         beneficios: [
-            'Hasta 8 tonos más blancos en una sola sesión',
-            'Sin daño al esmalte dental',
-            'Resultados visibles inmediatos',
-            'Procedimiento indoloro y rápido (45-60 min)',
-            'Efectos duraderos con cuidado adecuado',
+            'Suaviza arrugas en frente, entrecejo y patas de gallo',
+            'Previene la formación de nuevas líneas de expresión',
+            'Resultados naturales y armónicos',
+            'Procedimiento rápido, indoloro y sin cirugía',
+            'Retorno inmediato a las actividades diarias',
         ],
         proceso: [
-            { paso: 'Evaluación', detalle: 'Análisis del color actual y salud dental' },
-            { paso: 'Protección', detalle: 'Aislamiento de encías y tejidos blandos' },
-            { paso: 'Aplicación', detalle: 'Gel blanqueador de concentración profesional' },
-            { paso: 'Activación', detalle: 'Luz LED de alta potencia durante 15-20 min' },
-            { paso: 'Resultado', detalle: 'Evaluación del nuevo tono y recomendaciones' },
+            { paso: 'Evaluación', detalle: 'Análisis detallado de la mímica facial' },
+            { paso: 'Diseño', detalle: 'Marcación de puntos estratégicos y dosis personalizada' },
+            { paso: 'Aplicación', detalle: 'Microinyecciones con agujas ultra finas' },
+            { paso: 'Resultado', detalle: 'Efecto visible progresivo entre los 3 y 15 días' },
+            { paso: 'Control', detalle: 'Revisión y retoque a los 15 días si es necesario' },
+        ],
+        riesgos: [
+            'Leve enrojecimiento temporal en la zona de inyección',
+            'Posibles hematomas menores que desaparecen en pocos días',
+            'Requiere evitar ejercicio intenso y calor extremo por 24hs post-aplicación'
         ],
         icono: 'Sparkles',
-        color: 'text-yellow-400',
-        colorHex: '#FBBF24',
-        splineUrl: 'https://prod.spline.design/T-gJmC1D1pS0i1gC/scene.splinecode', // Placeholder (ej: un diente o diamante abstracto)
-    },
-    {
-        slug: 'bruxismo',
-        titulo: 'Bruxismo',
-        descripcionCorta:
-            'Protección personalizada contra el rechinar de dientes. Placas de descarga que cuidan tu salud dental mientras dormís.',
-        descripcionLarga:
-            'El bruxismo es el hábito involuntario de apretar o rechinar los dientes, generalmente durante el sueño. Puede provocar desgaste dental severo, dolor de mandíbula, cefaleas y problemas en la articulación temporomandibular (ATM). En nuestra clínica diseñamos placas de descarga personalizadas con materiales de alta calidad que se ajustan perfectamente a tu mordida, distribuyendo la presión y protegiendo tus dientes.',
-        beneficios: [
-            'Previene el desgaste prematuro de los dientes',
-            'Reduce dolor de mandíbula y cefaleas',
-            'Placa 100% personalizada a tu mordida',
-            'Material hipoalergénico y durable',
-            'Mejora la calidad del sueño',
-        ],
-        proceso: [
-            { paso: 'Diagnóstico', detalle: 'Evaluación de desgaste y síntomas' },
-            { paso: 'Impresión', detalle: 'Toma de moldes digitales de alta precisión' },
-            { paso: 'Fabricación', detalle: 'Confección de placa personalizada en laboratorio' },
-            { paso: 'Ajuste', detalle: 'Prueba y calibración de la placa' },
-            { paso: 'Seguimiento', detalle: 'Control periódico y ajustes si necesitás' },
-        ],
-        icono: 'ShieldCheck',
         color: 'text-purple-400',
         colorHex: '#C084FC',
-        splineUrl: 'https://prod.spline.design/1G4h8R0c00k88H3C/scene.splinecode', // Placeholder (bruxismo/placa)
+        imagen: '/images/service_botox.png',
     },
     {
-        slug: 'carillas-dentales',
-        titulo: 'Carillas Dentales',
+        slug: 'rellenos-dermicos',
+        titulo: 'Ácido Hialurónico',
         descripcionCorta:
-            'Transformá tu sonrisa con láminas ultrafinas de porcelana. Resultado natural, duradero y de diseño personalizado.',
+            'Devolvé volumen, hidratación y contorno a tu rostro con rellenos dérmicos premium.',
         descripcionLarga:
-            'Las carillas dentales son láminas ultrafinas de porcelana o composite que se adhieren a la cara visible del diente, transformando por completo tu sonrisa. En nuestra clínica utilizamos porcelana de alta gama (e.max) que replica la translucidez natural del diente. Nuestro equipo trabaja con diseño digital de sonrisa (DSD) para mostrar el resultado antes de comenzar, asegurando que cada carilla se adapte a tu rostro y personalidad.',
+            'Los rellenos con Ácido Hialurónico permiten reponer el volumen perdido, armonizar el perfil, perfilar labios y disimular surcos marcados. Utilizamos productos biocompatibles y reabsorbibles de las mejores marcas del mercado. Cada tratamiento es diseñado a medida para respetar tu anatomía, buscando siempre la elegancia y sutileza (efecto "menos es más").',
         beneficios: [
-            'Resultado estético natural e imperceptible',
-            'Corrige color, forma, tamaño y alineación',
-            'Porcelana resistente a manchas',
-            'Durabilidad de 10-15 años con cuidado adecuado',
-            'Diseño digital previo para ver el resultado antes',
+            'Restaura el volumen y contorno facial',
+            'Ideal para perfilado e hidratación de labios',
+            'Tratamiento de ojeras y surcos nasogenianos',
+            'Estimulación de colágeno e hidratación profunda',
+            'Resultados inmediatos y reversibles',
         ],
         proceso: [
-            { paso: 'Diseño Digital', detalle: 'Análisis facial y diseño de sonrisa digital' },
-            { paso: 'Preparación', detalle: 'Mínimo tallado conservador del diente' },
-            { paso: 'Provisorios', detalle: 'Carillas temporales mientras se fabrican las definitivas' },
-            { paso: 'Cementado', detalle: 'Adhesión precisa de carillas de porcelana' },
-            { paso: 'Pulido', detalle: 'Ajuste oclusal y pulido final perfecto' },
+            { paso: 'Diagnóstico', detalle: 'Evaluación de proporciones faciales' },
+            { paso: 'Elección de Producto', detalle: 'Selección de la densidad adecuada del hialurónico' },
+            { paso: 'Anestesia', detalle: 'Aplicación de crema anestésica local' },
+            { paso: 'Aplicación', detalle: 'Técnica de inyección con microcánulas para mayor seguridad' },
+            { paso: 'Evaluación', detalle: 'Masaje moldeador y revisión conjunta del resultado' },
+        ],
+        riesgos: [
+            'Inflamación inicial (edema) de 1 a 3 días',
+            'Riesgo de hematomas en la zona tratada',
+            'Contraindicado en enfermedades autoinmunes activas o embarazo'
         ],
         icono: 'Layers',
         color: 'text-pink-400',
         colorHex: '#F472B6',
-        splineUrl: 'https://prod.spline.design/V7B-5Yq2x2mR0GzF/scene.splinecode', // Placeholder (carillas)
+        imagen: '/images/before_after_rejuvenation.png', // Usaremos una imagen existente
     },
     {
-        slug: 'cirugia-bucal',
-        titulo: 'Cirugía Bucal',
+        slug: 'tratamientos-faciales',
+        titulo: 'Limpieza e Hidratación',
         descripcionCorta:
-            'Intervenciones quirúrgicas precisas y seguras. Extracciones complejas, muelas de juicio y más, con recuperación acelerada.',
+            'Renová tu piel en profundidad, eliminá impurezas y lográ un brillo radiante desde la primera sesión.',
         descripcionLarga:
-            'Nuestro equipo cuenta con especialización en cirugía bucal, realizando desde extracciones simples hasta procedimientos complejos como remoción de muelas de juicio impactadas, cirugías preprotésicas y biopsias de tejidos blandos. Utilizamos técnicas mínimamente invasivas y protocolos de sedación para garantizar tu comodidad. La recuperación es rápida gracias a protocolos farmacológicos modernos.',
+            'Nuestros tratamientos faciales de grado médico combinan aparatología avanzada y cosmecéutica premium. Ofrecemos desde limpiezas profundas y extracciones, hasta protocolos de hidratación intensiva, peelings químicos y dermaplaning. Diseñamos un plan de cuidado en casa (skincare) personalizado para optimizar y prolongar los resultados de los procedimientos realizados en clínica.',
         beneficios: [
-            'Especialistas altamente capacitados',
-            'Técnicas mínimamente invasivas',
-            'Protocolos de recuperación acelerada',
-            'Sedación consciente disponible',
-            'Seguimiento post-operatorio incluido',
+            'Eliminación profunda de puntos negros y células muertas',
+            'Estimulación de la renovación celular',
+            'Piel más luminosa, suave y uniforme',
+            'Mejora la absorción de productos de skincare',
+            'Reducción de poros dilatados',
         ],
         proceso: [
-            { paso: 'Evaluación', detalle: 'Radiografías y planificación quirúrgica' },
-            { paso: 'Anestesia', detalle: 'Anestesia local o sedación según el caso' },
-            { paso: 'Intervención', detalle: 'Procedimiento con técnica mínimamente invasiva' },
-            { paso: 'Sutura', detalle: 'Cierre con suturas reabsorbibles si es necesario' },
-            { paso: 'Recuperación', detalle: 'Indicaciones y medicación para recuperación rápida' },
+            { paso: 'Análisis de Piel', detalle: 'Evaluación del tipo y condición actual de la piel' },
+            { paso: 'Higiene Profunda', detalle: 'Desmaquillado y extracción de impurezas' },
+            { paso: 'Exfoliación', detalle: 'Peeling suave o mecánico (según necesidad)' },
+            { paso: 'Nutrición', detalle: 'Aplicación de mascarilla y sueros específicos' },
+            { paso: 'Protección', detalle: 'Sellado e hidratación con factor de protección solar' },
         ],
-        icono: 'Scissors',
-        color: 'text-red-400',
-        colorHex: '#F87171',
-        splineUrl: 'https://prod.spline.design/5F4mE1C0A1V2B3D4/scene.splinecode', // Placeholder (cirugía)
-    },
-    {
-        slug: 'implantes-dentales',
-        titulo: 'Implantes Dentales',
-        descripcionCorta:
-            'La solución definitiva para dientes perdidos. Implantes de titanio que se integran al hueso y funcionan como dientes naturales.',
-        descripcionLarga:
-            'Los implantes dentales son raíces artificiales de titanio que se colocan en el hueso maxilar para reemplazar dientes perdidos. Nuestros profesionales son especialistas en cirugía y rehabilitación sobre implantes, lo que garantiza un manejo integral: desde la planificación quirúrgica digital hasta la corona final. Trabajamos con sistemas de implantes de primera línea mundial, ofreciendo garantía y seguimiento a largo plazo.',
-        beneficios: [
-            'Solución permanente y definitiva',
-            'Sensación y función idéntica a un diente natural',
-            'No afecta dientes adyacentes',
-            'Preserva el hueso maxilar',
-            'Especialista certificado en rehabilitación sobre implantes',
+        riesgos: [
+            'Piel sensible al sol tras peelings químicos (requiere FPS)',
+            'Enrojecimiento transitorio post-extracción',
+            'Debe evitarse uso de ácidos fuertes en casa durante 72hs'
         ],
-        proceso: [
-            { paso: 'Planificación 3D', detalle: 'Tomografía y planificación digital del implante' },
-            { paso: 'Cirugía', detalle: 'Colocación del implante de titanio en el hueso' },
-            { paso: 'Osteointegración', detalle: 'Período de integración hueso-implante (3-4 meses)' },
-            { paso: 'Pilar', detalle: 'Colocación del conector sobre el implante' },
-            { paso: 'Corona', detalle: 'Instalación de la corona definitiva personalizada' },
-        ],
-        icono: 'Anchor',
-        color: 'text-cyan-400',
-        colorHex: '#22D3EE',
-        splineUrl: 'https://prod.spline.design/T-gJmC1D1pS0i1gC/scene.splinecode', // Placeholder (implantes)
-    },
-    {
-        slug: 'odontologia-general',
-        titulo: 'Odontología General',
-        descripcionCorta:
-            'Prevención y cuidado integral de tu salud bucal. Controles periódicos, limpiezas y restauraciones para mantener tu sonrisa sana.',
-        descripcionLarga:
-            'La odontología general es la base de una boca sana. Realizamos controles preventivos, limpiezas profesionales (detartraje), restauraciones estéticas con resinas de alta calidad y detección temprana de caries y enfermedades periodontales. Creemos en la prevención como la mejor inversión en salud bucal: una consulta a tiempo puede evitar tratamientos complejos y costosos.',
-        beneficios: [
-            'Detección temprana de problemas dentales',
-            'Limpiezas profesionales con ultrasonido',
-            'Restauraciones estéticas del color natural del diente',
-            'Plan de cuidado preventivo personalizado',
-            'Ahorro a largo plazo evitando tratamientos complejos',
-        ],
-        proceso: [
-            { paso: 'Historia Clínica', detalle: 'Registro completo de antecedentes y hábitos' },
-            { paso: 'Examen', detalle: 'Revisión completa de dientes, encías y tejidos' },
-            { paso: 'Diagnóstico', detalle: 'Plan de tratamiento personalizado con opciones' },
-            { paso: 'Tratamiento', detalle: 'Realización del procedimiento indicado' },
-            { paso: 'Prevención', detalle: 'Plan de controles periódicos y cuidado en casa' },
-        ],
-        icono: 'Stethoscope',
-        color: 'text-blue-400',
-        colorHex: '#60A5FA',
-        splineUrl: 'https://prod.spline.design/X6s-KjZ0P2qU0wW4/scene.splinecode', // Placeholder (general)
-    },
-    {
-        slug: 'odontologia-ninos',
-        titulo: 'Odontología para Niños',
-        descripcionCorta:
-            'Atención especializada y cálida para los más chicos. Consultas lúdicas que crean hábitos de salud bucal desde la infancia.',
-        descripcionLarga:
-            'Sabemos que la primera experiencia dental marca la relación del niño con el dentista para toda la vida. Por eso, nuestras consultas pediátricas son diseñadas para ser experiencias positivas y divertidas. Trabajamos con técnicas de manejo conductual, explicando cada paso con lenguaje amigable. Realizamos selladores, fluoración, control de hábitos (chupete, dedo) y educación en higiene bucal adaptada a cada edad.',
-        beneficios: [
-            'Ambiente amigable y libre de miedos',
-            'Profesionales entrenados en odontopediatría',
-            'Selladores preventivos contra caries',
-            'Educación en higiene dental divertida',
-            'Seguimiento del desarrollo dental del niño',
-        ],
-        proceso: [
-            { paso: 'Bienvenida', detalle: 'Recorrido del consultorio y presentación amigable' },
-            { paso: 'Revisión', detalle: 'Examen adaptado con explicaciones para el niño' },
-            { paso: 'Prevención', detalle: 'Aplicación de flúor y/o selladores' },
-            { paso: 'Educación', detalle: 'Técnica de cepillado con demostración práctica' },
-            { paso: 'Seguimiento', detalle: 'Plan de controles adaptado al crecimiento' },
-        ],
-        icono: 'Baby',
-        color: 'text-green-400',
-        colorHex: '#4ADE80',
-        splineUrl: 'https://prod.spline.design/C7r-HyT1F3lE1oN5/scene.splinecode', // Placeholder (niños)
-    },
-    {
-        slug: 'ortodoncia',
-        titulo: 'Ortodoncia',
-        descripcionCorta:
-            'Alineación perfecta de tus dientes con brackets o alineadores invisibles. Especialización dedicada para resultados precisos.',
-        descripcionLarga:
-            'Nuestra clínica cuenta con especialización en ortodoncia, ofreciendo soluciones para maloclusiones, apiñamiento, mordida cruzada y otros problemas de alineación dental. Trabajamos con brackets metálicos, estéticos (cerámicos) y alineadores transparentes. Cada tratamiento es planificado digitalmente para predecir el resultado final y optimizar los tiempos, logrando sonrisas alineadas y funcionales.',
-        beneficios: [
-            'Especialista dedicado en ortodoncia',
-            'Opciones de brackets estéticos e invisibles',
-            'Planificación digital del resultado final',
-            'Mejora funcional de la mordida',
-            'Tratamientos para todas las edades',
-        ],
-        proceso: [
-            { paso: 'Diagnóstico', detalle: 'Radiografías, fotos y modelos de estudio' },
-            { paso: 'Plan Digital', detalle: 'Simulación del movimiento dental y timeline' },
-            { paso: 'Colocación', detalle: 'Instalación de aparatología elegida' },
-            { paso: 'Controles', detalle: 'Ajustes mensuales para guiar el movimiento' },
-            { paso: 'Retención', detalle: 'Retenedores para mantener el resultado para siempre' },
-        ],
-        icono: 'AlignCenter',
-        color: 'text-indigo-400',
-        colorHex: '#818CF8',
-        splineUrl: 'https://prod.spline.design/T-gJmC1D1pS0i1gC/scene.splinecode', // Placeholder (ortodoncia)
-    },
-    {
-        slug: 'periodoncia',
-        titulo: 'Periodoncia (Encías)',
-        descripcionCorta:
-            'Cuidado especializado de encías y tejidos de soporte. Tratamiento de gingivitis y periodontitis para preservar tus dientes.',
-        descripcionLarga:
-            'La periodoncia es la especialidad que trata las enfermedades de las encías y los tejidos que sostienen los dientes. La gingivitis (encías inflamadas y sangrantes) y la periodontitis (pérdida de hueso alrededor de los dientes) son enfermedades silenciosas que, sin tratamiento, llevan a la pérdida dental. Realizamos raspaje y alisado radicular, cirugía periodontal y regeneración de tejidos para devolver la salud a tus encías.',
-        beneficios: [
-            'Detiene la progresión de enfermedad periodontal',
-            'Elimina encías sangrantes e inflamadas',
-            'Preserva piezas dentales comprometidas',
-            'Regeneración de tejidos con biomateriales',
-            'Mejora el aliento y la salud general',
-        ],
-        proceso: [
-            { paso: 'Sondaje', detalle: 'Medición de bolsas periodontales alrededor de cada diente' },
-            { paso: 'Diagnóstico', detalle: 'Radiografías para evaluar nivel de hueso' },
-            { paso: 'Raspaje', detalle: 'Limpieza profunda bajo la encía (raspaje y alisado)' },
-            { paso: 'Reevaluación', detalle: 'Control de la respuesta al tratamiento' },
-            { paso: 'Mantenimiento', detalle: 'Programa de higiene periodontal periódica' },
-        ],
-        icono: 'HeartPulse',
-        color: 'text-rose-400',
-        colorHex: '#FB7185',
-        splineUrl: 'https://prod.spline.design/X6s-KjZ0P2qU0wW4/scene.splinecode', // Placeholder (encías)
-    },
-    {
-        slug: 'rayos-x',
-        titulo: 'Rayos X Dentales',
-        descripcionCorta:
-            'Diagnóstico digital de precisión instantánea. Radiografías digitales con mínima radiación y máxima resolución.',
-        descripcionLarga:
-            'Contamos con equipamiento de radiología digital de última generación que permite obtener imágenes de alta resolución con hasta un 90% menos de radiación que los métodos tradicionales. Las radiografías periapicales, panorámicas y bite-wing son herramientas fundamentales para diagnosticar caries interproximales, evaluar el estado del hueso, planificar implantes y controlar tratamientos de conducto.',
-        beneficios: [
-            'Hasta 90% menos radiación que métodos convencionales',
-            'Imágenes disponibles al instante',
-            'Alta resolución para diagnósticos precisos',
-            'Fundamental para planificación de implantes',
-            'Almacenamiento digital para seguimiento histórico',
-        ],
-        proceso: [
-            { paso: 'Indicación', detalle: 'El profesional determina el tipo de radiografía necesaria' },
-            { paso: 'Preparación', detalle: 'Colocación del sensor digital y protección' },
-            { paso: 'Toma', detalle: 'Exposición de milisegundos con equipo digital' },
-            { paso: 'Visualización', detalle: 'Imagen instantánea en pantalla de alta resolución' },
-            { paso: 'Análisis', detalle: 'Interpretación y explicación al paciente' },
-        ],
-        icono: 'ScanLine',
+        icono: 'ShieldCheck',
         color: 'text-emerald-400',
         colorHex: '#34D399',
-        splineUrl: 'https://prod.spline.design/X6s-KjZ0P2qU0wW4/scene.splinecode', // Placeholder (Rayos X)
+        imagen: '/images/service_facial.png',
     },
     {
-        slug: 'tratamiento-de-conducto',
-        titulo: 'Tratamiento de Conducto',
+        slug: 'depilacion-laser',
+        titulo: 'Depilación Láser',
         descripcionCorta:
-            'Eliminación del dolor preservando tu pieza dental. Endodoncia moderna con instrumental rotatorio de precisión.',
+            'Eliminá el vello no deseado de forma definitiva con tecnología láser de vanguardia, segura para todo tipo de piel.',
         descripcionLarga:
-            'El tratamiento de conducto (endodoncia) es el procedimiento que permite salvar un diente cuando la pulpa dental (nervio) está infectada o inflamada. Utilizamos instrumental rotatorio de níquel-titanio, localizadores electrónicos de ápice y radiografías digitales para lograr una limpieza y obturación precisa de los conductos. Bajo anestesia local, el procedimiento es completamente indoloro y permite mantener tu diente natural en boca.',
+            'Contamos con plataformas láser médicas de última generación (Trío/Diodo) que garantizan una depilación rápida, efectiva y prácticamente indolora gracias a su sistema de enfriamiento integrado. Nuestros protocolos son personalizados para cada paciente, asegurando resultados en menos sesiones y protegiendo siempre la salud e integridad de la piel.',
         beneficios: [
-            'Elimina el dolor de forma definitiva',
-            'Salva el diente natural evitando la extracción',
-            'Procedimiento indoloro bajo anestesia',
-            'Instrumental rotatorio de última generación',
-            'Una o dos sesiones según complejidad',
+            'Reducción permanente del vello',
+            'Prevención y cura de la foliculitis (vellos encarnados)',
+            'Piel más suave y sedosa',
+            'Tecnología segura para usar todo el año',
+            'Tratamiento rápido y confortable',
         ],
         proceso: [
-            { paso: 'Anestesia', detalle: 'Bloqueo completo de la zona sin dolor' },
-            { paso: 'Acceso', detalle: 'Apertura controlada para acceder a los conductos' },
-            { paso: 'Limpieza', detalle: 'Instrumentación rotatoria y desinfección' },
-            { paso: 'Obturación', detalle: 'Sellado hermético de los conductos' },
-            { paso: 'Restauración', detalle: 'Reconstrucción del diente para su función completa' },
+            { paso: 'Evaluación', detalle: 'Análisis del tipo de vello y fototipo de piel' },
+            { paso: 'Preparación', detalle: 'Limpieza de la zona y protección ocular' },
+            { paso: 'Calibración', detalle: 'Ajuste de parámetros según las características del paciente' },
+            { paso: 'Aplicación Láser', detalle: 'Técnica de barrido con cabezal frío' },
+            { paso: 'Post-Tratamiento', detalle: 'Aplicación de gel descongestivo' },
         ],
-        icono: 'Crosshair',
+        riesgos: [
+            'Contraindicado sobre piel bronceada recientemente',
+            'Posible ardor o enrojecimiento perifolicular leve',
+            'Se debe restringir exposición solar directa 2 semanas previas y post sesión'
+        ],
+        icono: 'ScanLine',
+        color: 'text-blue-400',
+        colorHex: '#60A5FA',
+        imagen: '/images/service_laser.png',
+    },
+    {
+        slug: 'medicina-corporal',
+        titulo: 'Modelado Corporal',
+        descripcionCorta:
+            'Atenuá la celulitis, reducí centímetros y mejorá la firmeza con tecnología y tratamientos médicos.',
+        descripcionLarga:
+            'Nuestros tratamientos corporales están diseñados para combatir adiposidad localizada, celulitis y flacidez. Combinamos técnicas como mesoterapia corporal, radiofrecuencia, criolipólisis y enzimas recombinantes para lograr resultados efectivos sin cirugía. El abordaje es integral, buscando no solo mejoras estéticas sino también bienestar general.',
+        beneficios: [
+            'Reducción de grasa localizada sin cirugía',
+            'Mejora visible en la apariencia de la celulitis',
+            'Efecto tensor para combatir la flacidez',
+            'Estimulación del sistema linfático',
+            'Procedimientos ambulatorios de rápida recuperación',
+        ],
+        proceso: [
+            { paso: 'Evaluación Corporal', detalle: 'Mediciones y registro fotográfico' },
+            { paso: 'Plan de Acción', detalle: 'Selección de la tecnología o inyectables adecuados' },
+            { paso: 'Tratamiento', detalle: 'Sesión en clínica (mesoterapia o aparatología)' },
+            { paso: 'Seguimiento', detalle: 'Controles evolutivos' },
+            { paso: 'Mantenimiento', detalle: 'Recomendaciones nutricionales y pautas complementarias' },
+        ],
+        riesgos: [
+            'Calor intenso temporal (radiofrecuencia)',
+            'Pequeños hematomas en mesoterapia inyectable',
+            'Molestias transitorias en tejidos musculares profundos'
+        ],
+        icono: 'HeartPulse',
         color: 'text-orange-400',
         colorHex: '#FB923C',
-        splineUrl: 'https://prod.spline.design/1G4h8R0c00k88H3C/scene.splinecode', // Placeholder (Conducto)
+        imagen: '/images/service_body.png',
     },
+    {
+        slug: 'bioestimulacion',
+        titulo: 'Bioestimulación y PRP',
+        descripcionCorta:
+            'Regenerá tu piel desde adentro estimulando tu propio colágeno con plasma rico en plaquetas y bioestimuladores.',
+        descripcionLarga:
+            'La medicina regenerativa estética es el futuro. Mediante la aplicación de bioestimuladores (como Radiesse o Sculptra) o de tu propio Plasma Rico en Plaquetas (PRP), logramos despertar las células de la piel para que produzcan colágeno y elastina nueva. Esto devuelve firmeza, luminosidad y calidad a la piel envejecida, con un brillo verdaderamente revitalizado.',
+        beneficios: [
+            'Piel visiblemente más joven, firme y turgente',
+            'Producción de colágeno propio a largo plazo',
+            'Mejora cicatrices o marcas de acné',
+            'Tratamiento 100% natural (en el caso de PRP)',
+            'Resultados duraderos y evolutivos en el tiempo',
+        ],
+        proceso: [
+            { paso: 'Consulta Médica', detalle: 'Evaluación del nivel de envejecimiento celular' },
+            { paso: 'Preparación', detalle: 'Extracción de sangre (PRP) o preparación del bioestimulador' },
+            { paso: 'Procesamiento', detalle: 'Centrifugado para obtener plasma concentrado (si aplica)' },
+            { paso: 'Microinfiltración', detalle: 'Aplicación precisa en rostro, cuello o manos' },
+            { paso: 'Recuperación', detalle: 'Cuidados post-procedimiento rápidos' },
+        ],
+        riesgos: [
+            'Proceso de inyección genera inflamación controlada esperable',
+            'Molestia leve durante la infiltración celular',
+            'Resultados evolutivos que tardan entre 30 y 45 días en manifestarse visualmente'
+        ],
+        icono: 'Crosshair',
+        color: 'text-cyan-400',
+        colorHex: '#22D3EE',
+        imagen: '/images/service_prp.png',
+    }
 ];
 
 export function getServicioBySlug(slug: string): Servicio | undefined {

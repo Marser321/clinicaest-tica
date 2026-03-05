@@ -43,7 +43,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
     }, [isOpen]);
 
     const specialties = [
-        'Odontología General', 'Ortodoncia', 'Implantes', 'Estética (Carillas/Blanqueamiento)', 'Endodoncia', 'Urgencia'
+        'Toxina Botulínica (Botox)', 'Rellenos (Ácido Hialurónico)', 'Limpieza Facial Profunda', 'Tratamientos Corporales', 'Depilación Láser', 'Consulta de Evaluación'
     ];
 
     const generateDates = () => {

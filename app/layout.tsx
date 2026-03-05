@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import { InsforgeProvider } from './providers';
+import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import './globals.css';
 
 const inter = Inter({
@@ -16,23 +17,24 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Clínica Dental OdontoPro | Odontología Integral de Excelencia',
+  title: 'AestheticPro | Medicina Estética Avanzada',
   description:
-    'Clínica odontológica especializada en implantes dentales, ortodoncia, cirugía bucal y rehabilitación estética. Equipo de especialistas con tecnología de última generación.',
+    'Clínica estética especializada en tratamientos faciales y corporales. Toxina botulínica, rellenos, láser y tecnología de primer nivel para potenciar tu belleza.',
   keywords: [
-    'dentista',
-    'implantes dentales',
-    'ortodoncia',
-    'clínica dental',
-    'OdontoPro',
-    'blanqueamiento dental',
-    'cirugía bucal',
-    'carillas dentales',
+    'medicina estética',
+    'botox',
+    'ácido hialurónico',
+    'depilación láser',
+    'clínica estética',
+    'AestheticPro',
+    'rejuvenecimiento facial',
+    'modelado corporal',
+    'bioestimuladores',
   ],
   openGraph: {
-    title: 'Clínica Dental OdontoPro',
+    title: 'AestheticPro Medicina Estética',
     description:
-      'Odontología integral, implantes y ortodoncia con tecnología de vanguardia.',
+      'Medicina estética y tecnología de vanguardia para tu bienestar.',
     type: 'website',
     locale: 'es_UY',
   },
@@ -44,10 +46,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${inter.variable} ${jakarta.variable}`}>
       <body className="bg-bg-primary text-text-primary font-body" suppressHydrationWarning>
-        <InsforgeProvider>
-          {children}
-        </InsforgeProvider>
-        <Toaster theme="dark" position="top-center" toastOptions={{ style: { background: '#09090b', border: '1px solid #dc2626', color: '#fff' } }} />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          themes={['light', 'dark']}
+        >
+          <InsforgeProvider>
+            {children}
+          </InsforgeProvider>
+          <Toaster theme="system" position="top-center" toastOptions={{ style: { background: 'var(--color-bg-primary)', border: '1px solid var(--color-accent)', color: 'var(--color-text-primary)' } }} />
+        </ThemeProvider>
       </body>
     </html>
   );

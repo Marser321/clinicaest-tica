@@ -2,57 +2,154 @@
 @import "tw-animate-css";
 
 /* ============================================
-   CLÍNICA DENTAL DR. DIEGO MARI
-   Sistema de Diseño — Dark Mode Clínico Premium
+   CLÍNICA ESTÉTICA
+   Sistema de Diseño — Dark Mode Premium
    ============================================ */
 
 @theme {
   /* --- Fondos --- */
-  --color-bg-primary: #0A0A0A;
-  --color-bg-secondary: #111111;
-  --color-bg-tertiary: #1A1A1A;
-  --color-bg-card: #151515;
-  --color-bg-navy: #050505;
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-bg-card: var(--bg-card);
+  --color-bg-navy: var(--bg-navy);
 
-  /* --- Glassmorphism Dark --- */
-  --color-glass-surface: rgba(20, 20, 20, 0.75);
-  --color-glass-border: rgba(255, 255, 255, 0.08);
-  --color-glass-surface-heavy: rgba(20, 20, 20, 0.92);
+  /* --- Glassmorphism --- */
+  --color-glass-surface: var(--glass-surface);
+  --color-glass-border: var(--glass-border);
+  --color-glass-surface-heavy: var(--glass-surface-heavy);
 
-  /* --- Acentos (Rojos/Deslumbramiento) --- */
-  --color-accent: #DC2626; /* red-600 */
-  --color-accent-secondary: #991B1B; /* red-800 */
-  --color-accent-light: #FEF2F2; /* red-50 */
-  --color-accent-gold: #D97706; /* Opcional si hay VIP */
-  --color-accent-gold-light: #FFFBEB;
-  --color-accent-success: #059669;
-  --color-accent-danger: #ef4444; /* red-500 */
+  /* --- Acentos --- */
+  --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-light: var(--accent-light);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-gold-light: var(--accent-gold-light);
+  --color-accent-success: var(--accent-success);
+  --color-accent-danger: var(--accent-danger);
 
   /* --- Texto --- */
-  --color-text-primary: #F8FAFC;
-  --color-text-secondary: #CBD5E1;
-  --color-text-muted: #94A3B8;
-  --color-text-accent: #EF4444;
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-accent: var(--text-accent);
 
   /* --- Tipografía --- */
   --font-display: var(--font-jakarta), system-ui, sans-serif;
   --font-body: var(--font-inter), system-ui, sans-serif;
 
-  /* --- Sombras Premium Dark --- */
-  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-glass-sm: 0 4px 16px rgba(0, 0, 0, 0.3);
-  --shadow-float: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --shadow-card-hover: 0 12px 40px rgba(220, 38, 38, 0.15);
-  --shadow-glow-accent: 0 0 30px rgba(220, 38, 38, 0.2);
-  --shadow-glow-accent-strong: 0 0 40px rgba(220, 38, 38, 0.4);
+  /* --- Sombras --- */
+  --shadow-glass: var(--shadow-glass-var);
+  --shadow-glass-sm: var(--shadow-glass-sm-var);
+  --shadow-float: var(--shadow-float-var);
+  --shadow-card: var(--shadow-card-var);
+  --shadow-card-hover: var(--shadow-card-hover-var);
+  --shadow-glow-accent: var(--shadow-glow-accent-var);
+  --shadow-glow-accent-strong: var(--shadow-glow-accent-strong-var);
 
   /* --- Gradientes como background-image --- */
-  --background-image-hero-radial: radial-gradient(ellipse at 20% 50%, rgba(220, 38, 38, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(153, 27, 27, 0.05) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(220, 38, 38, 0.04) 0%, transparent 50%);
-  --background-image-card-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-  --background-image-text-gradient: linear-gradient(135deg, #EF4444, #FCA5A5, #EF4444);
-  --background-image-gold-gradient: linear-gradient(135deg, #D97706, #F59E0B, #D97706);
-  --background-image-cta-gradient: linear-gradient(135deg, #DC2626, #EF4444);
+  --background-image-hero-radial: var(--bg-hero-radial);
+  --background-image-card-gradient: var(--bg-card-gradient);
+  --background-image-text-gradient: var(--bg-text-gradient);
+  --background-image-gold-gradient: var(--bg-gold-gradient);
+  --background-image-cta-gradient: var(--bg-cta-gradient);
+}
+
+:root,
+[data-theme='dark'] {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1A1A1A;
+  --bg-card: #151515;
+  --bg-navy: #050505;
+
+  --glass-surface: rgba(20, 20, 20, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-surface-heavy: rgba(20, 20, 20, 0.92);
+
+  --accent: #DC2626;
+  /* red-600 */
+  --accent-secondary: #991B1B;
+  /* red-800 */
+  --accent-light: #FEF2F2;
+  /* red-50 */
+  --accent-gold: #D97706;
+  --accent-gold-light: #FFFBEB;
+  --accent-success: #059669;
+  --accent-danger: #ef4444;
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-accent: #EF4444;
+
+  --shadow-glass-var: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glass-sm-var: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-float-var: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
+  --shadow-card-var: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover-var: 0 12px 40px rgba(220, 38, 38, 0.15);
+  --shadow-glow-accent-var: 0 0 30px rgba(220, 38, 38, 0.2);
+  --shadow-glow-accent-strong-var: 0 0 40px rgba(220, 38, 38, 0.4);
+
+  --bg-hero-radial: radial-gradient(ellipse at 20% 50%, rgba(220, 38, 38, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(153, 27, 27, 0.05) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(220, 38, 38, 0.04) 0%, transparent 50%);
+  --bg-card-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  --bg-text-gradient: linear-gradient(135deg, #EF4444, #FCA5A5, #EF4444);
+  --bg-gold-gradient: linear-gradient(135deg, #D97706, #F59E0B, #D97706);
+  --bg-cta-gradient: linear-gradient(135deg, #DC2626, #EF4444);
+}
+
+[data-theme='light'] {
+  --bg-primary: #F0F9FF;
+  /* sky-50 */
+  --bg-secondary: #E0F2FE;
+  /* sky-100 */
+  --bg-tertiary: #BAE6FD;
+  /* sky-200 */
+  --bg-card: #FFFFFF;
+  --bg-navy: #7DD3FC;
+  /* sky-300 */
+
+  --glass-surface: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(14, 165, 233, 0.15);
+  /* sky border */
+  --glass-surface-heavy: rgba(255, 255, 255, 0.92);
+
+  --accent: #0284C7;
+  /* sky-600 */
+  --accent-secondary: #0369A1;
+  /* sky-700 */
+  --accent-light: #F0F9FF;
+  /* sky-50 */
+  --accent-gold: #0284C7;
+  /* Re-using sky for light themes as gold replacement */
+  --accent-gold-light: #F0F9FF;
+  --accent-success: #059669;
+  /* emerald-600 */
+  --accent-danger: #E11D48;
+  /* rose-600 */
+
+  --text-primary: #0F172A;
+  /* slate-900 */
+  --text-secondary: #334155;
+  /* slate-700 */
+  --text-muted: #64748B;
+  /* slate-500 */
+  --text-accent: #0284C7;
+  /* sky-600 */
+
+  --shadow-glass-var: 0 8px 32px rgba(14, 165, 233, 0.1);
+  --shadow-glass-sm-var: 0 4px 16px rgba(14, 165, 233, 0.05);
+  --shadow-float-var: 0 20px 50px -12px rgba(14, 165, 233, 0.2);
+  --shadow-card-var: 0 4px 24px rgba(14, 165, 233, 0.08);
+  --shadow-card-hover-var: 0 12px 40px rgba(14, 165, 233, 0.25);
+  --shadow-glow-accent-var: 0 0 30px rgba(14, 165, 233, 0.3);
+  --shadow-glow-accent-strong-var: 0 0 40px rgba(14, 165, 233, 0.5);
+
+  --bg-hero-radial: radial-gradient(ellipse at 20% 50%, rgba(14, 165, 233, 0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(2, 132, 199, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
+  --bg-card-gradient: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(240, 249, 255, 1) 100%);
+  --bg-text-gradient: linear-gradient(135deg, #0284C7, #38BDF8, #0284C7);
+  --bg-gold-gradient: linear-gradient(135deg, #0284C7, #0EA5E9, #0284C7);
+  --bg-cta-gradient: linear-gradient(135deg, #0284C7, #0EA5E9);
 }
 
 /* --- Base --- */
@@ -148,17 +245,17 @@ body {
 
   .btn-secondary {
     background: transparent;
-    color: #F8FAFC;
+    color: var(--color-text-primary);
     font-weight: 600;
     border-radius: 9999px;
     padding: 0.875rem 2rem;
-    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border: 1.5px solid var(--color-glass-border);
     transition: all 0.3s ease;
   }
 
   .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.4);
+    background: var(--color-glass-surface);
+    border-color: var(--color-accent);
   }
 
   .section-padding {
@@ -232,7 +329,7 @@ body {
   }
 }
 
-/* Escáner de Rayos X */
+/* Escáner Facial / Análisis */
 @keyframes scanner-sweep {
   0% {
     transform: translateY(-100%);
@@ -253,7 +350,7 @@ body {
   }
 }
 
-/* Rebote elástico para niños */
+/* Animación de Entrada Elástica */
 @keyframes elastic-bounce {
 
   0%,

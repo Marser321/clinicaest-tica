@@ -9,39 +9,39 @@ import { toast } from 'sonner';
 const MOCK_PLANS = [
     {
         id: 'basic',
-        name: 'Smile Básico',
+        name: 'Glow Básico',
         price: 990,
         accent: 'bg-slate-500',
         border: 'border-slate-500/20',
         text: 'text-slate-400',
-        features: ['1 Limpieza Anual Gratis', '10% Dto. en Tratamientos', 'Radiografías Base Incluidas']
+        features: ['1 Limpieza Facial Anual', '10% Dto. en Tratamientos', 'Evaluación Dérmica Base Incluida']
     },
     {
         id: 'pro',
-        name: 'Smile PRO',
+        name: 'Glow PRO',
         price: 1890,
         accent: 'bg-red-500',
         border: 'border-red-500/30',
         text: 'text-red-400',
         isPopular: true,
-        features: ['2 Limpiezas Anuales Gratis', '20% Dto. en Tratamientos', 'Blanqueamiento Anual 50% Dto', 'Triage Prioritario']
+        features: ['2 Limpiezas Faciales Anuales', '20% Dto. en Tratamientos', 'Peeling Químico Anual 50% Dto', 'Triage Prioritario']
     },
     {
         id: 'elite',
-        name: 'Smile Élite',
+        name: 'Glow Élite',
         price: 2990,
         accent: 'bg-amber-500',
         border: 'border-amber-500/30',
         text: 'text-amber-400',
-        features: ['Limpiezas Ilimitadas', '30% Dto. Tratamientos/Implantes', 'Blanqueamiento Premium Anual', 'Estética Dental Prioritaria']
+        features: ['Limpiezas Faciales Ilimitadas', '30% Dto. Tratamientos/Inyectables', 'Peeling Químico Premium Anual', 'Medicina Estética Prioritaria']
     }
 ];
 
 // Pacientes Suscritos (Mock)
 const SUBSCRIBERS = [
-    { id: 1, name: 'Ana Gómez', plan: 'Smile PRO', status: 'active', renewal: '15 Nov 2026', lifetimeValue: '$18.900' },
-    { id: 2, name: 'Luis Terra', plan: 'Smile Élite', status: 'active', renewal: '02 Ene 2027', lifetimeValue: '$45.000' },
-    { id: 3, name: 'Marta Ríos', plan: 'Smile Básico', status: 'past_due', renewal: 'Atrasado (3 días)', lifetimeValue: '$4.950' },
+    { id: 1, name: 'Ana Gómez', plan: 'Glow PRO', status: 'active', renewal: '15 Nov 2026', lifetimeValue: '$18.900' },
+    { id: 2, name: 'Luis Terra', plan: 'Glow Élite', status: 'active', renewal: '02 Ene 2027', lifetimeValue: '$45.000' },
+    { id: 3, name: 'Marta Ríos', plan: 'Glow Básico', status: 'past_due', renewal: 'Atrasado (3 días)', lifetimeValue: '$4.950' },
 ];
 
 export default function MembresiasPage() {
@@ -57,7 +57,7 @@ export default function MembresiasPage() {
                         Gestión de Membresías
                         <span className="bg-red-500/10 text-red-500 text-xs px-2.5 py-1 rounded-full border border-red-500/20">Ingresos Recurrentes</span>
                     </h1>
-                    <p className="text-slate-400 mt-1">Configura los planes del &quot;Smile Club&quot; y visualiza las suscripciones activas.</p>
+                    <p className="text-slate-400 mt-1">Configura los planes del &quot;Glow Club&quot; y visualiza las suscripciones activas.</p>
                 </div>
                 <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -108,7 +108,7 @@ export default function MembresiasPage() {
                         <Star size={48} className="text-red-500" />
                     </div>
                     <p className="text-slate-400 text-sm font-medium mb-1">Plan más popular</p>
-                    <h3 className="text-3xl font-display font-bold text-red-400">Smile PRO</h3>
+                    <h3 className="text-3xl font-display font-bold text-red-400">Glow PRO</h3>
                     <p className="text-xs text-slate-300 mt-2">Representa el 60% de los afiliados.</p>
                 </motion.div>
             </div>

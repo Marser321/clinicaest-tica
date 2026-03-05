@@ -37,8 +37,8 @@ export function AboutSection() {
                             <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-black/40 shadow-[0_8px_40px_rgba(0,0,0,0.5)] p-1 relative border border-white/10">
                                 <div className="w-full h-full relative flex items-center justify-center rounded-xl overflow-hidden">
                                     <Image
-                                        src="/images/about-dentist.png"
-                                        alt="Odontólogo Especialista"
+                                        src="/images/about_us_clinic.png"
+                                        alt="Interior Clínica Estética Premium"
                                         fill
                                         className="object-cover"
                                     />
@@ -70,12 +70,12 @@ export function AboutSection() {
                             </span>
                             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-6 leading-tight text-white drop-shadow-md">
                                 Compromiso con tu{' '}
-                                <span className="text-gradient">salud bucal</span>
+                                <span className="text-gradient">bienestar integral</span>
                             </h2>
                             <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-4">
-                                En <strong className="text-white font-semibold">OdontoPro</strong> contamos con un equipo de
-                                profesionales de primer nivel, especializados en las diferentes áreas de la odontología
-                                para ofrecer diagnóstico y tratamiento con los más altos estándares de calidad.
+                                En <strong className="text-white font-semibold">AestheticPro</strong> contamos con un equipo de
+                                profesionales de primer nivel, especializados en las diferentes áreas de la medicina estética
+                                para ofrecer diagnóstico y tratamiento con los más altos estándares de calidad y seguridad.
                             </p>
                             <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
                                 Nuestro objetivo es brindar una atención integral, personalizada y de excelencia.

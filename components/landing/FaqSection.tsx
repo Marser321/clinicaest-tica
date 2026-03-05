@@ -7,24 +7,24 @@ import { AnimatedSection, StaggerContainer, staggerItemVariants } from '@/compon
 
 const faqs = [
     {
-        pregunta: '¿Los tratamientos como implantes o conducto duelen?',
-        respuesta: 'No. En OdontoPro utilizamos anestesia local de última generación y, para pacientes con ansiedad, ofrecemos sedación consciente. Nuestro objetivo principal es garantizar una experiencia libre de dolor y molestias en todo momento.'
+        pregunta: '¿Los tratamientos inyectables como Botox o Rellenos duelen?',
+        respuesta: 'No. En AestheticPro utilizamos agujas ultra finas y anestesia tópica de alta calidad para garantizar el máximo confort del paciente durante todo el procedimiento.'
     },
     {
-        pregunta: '¿Toman radiografías en la primera consulta?',
-        respuesta: 'Sí, contamos con equipamiento de radiología digital integrado. En tu primera visita de evaluación, tomaremos las imágenes necesarias para brindarte un diagnóstico preciso sin necesidad de que te traslades a otro centro.'
+        pregunta: '¿Hacen una evaluación antes de cualquier procedimiento?',
+        respuesta: 'Sí, todas las primeras consultas incluyen un diagnóstico exhaustivo de la piel o zona a tratar para poder diseñar un plan a medida, 100% individualizado.'
     },
     {
         pregunta: '¿Cuáles son los medios de pago aceptados?',
-        respuesta: 'Aceptamos todas las tarjetas de crédito y débito. Además, para tratamientos extendidos como Ortodoncia o múltiples Implantes, diseñamos planes de financiación a medida que se ajustan a tus posibilidades.'
+        respuesta: 'Aceptamos todas las tarjetas de crédito y débito, transferencias y efectivo. Para tratamientos prolongados, ofrecemos financiación sin recargo.'
     },
     {
-        pregunta: '¿Cuánto demora un tratamiento de Diseño de Sonrisa (Carillas)?',
-        respuesta: 'El proceso suele completarse en 2 a 3 sesiones distribuidas en un par de semanas. Primero escaneamos y diseñamos tu sonrisa digitalmente para que la apruebes, y luego procedemos a la instalación de las carillas definitivas de porcelana.'
+        pregunta: '¿Cuánto dura el efecto de la Toxina Botulínica (Botox)?',
+        respuesta: 'Por lo general, la duración es de 4 a 6 meses, dependiendo del metabolismo de cada paciente y la fuerza muscular de la zona tratada. Recomendamos retoques para mantener el efecto preventivo.'
     },
     {
-        pregunta: 'Tengo una urgencia dental, ¿atienden sin turno previo?',
-        respuesta: 'Recomendamos siempre contactarnos primero por teléfono o WhatsApp. Si evaluamos que tu caso es una urgencia real (dolor agudo, trauma, inflamación severa), te haremos un espacio en la agenda ese mismo día.'
+        pregunta: '¿Puedo volver a trabajar después de un tratamiento facial?',
+        respuesta: 'En la gran mayoría de nuestros tratamientos (Botox, peelings suaves, rellenos) los pacientes retoman sus actividades normales inmediatamente con mínimos cuidados.'
     }
 ];
 

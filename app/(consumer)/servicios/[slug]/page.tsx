@@ -12,9 +12,10 @@ import Image from 'next/image';
 import { servicios, getServicioBySlug } from '@/lib/servicios-data';
 import { AnimatedSection, StaggerContainer, staggerItemVariants } from '@/components/ui/AnimatedSection';
 import { use } from 'react';
-import { SplineScene } from '@/components/ui/SplineScene';
 
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+import { LucideProps } from 'lucide-react';
+
+const iconMap: Record<string, React.ComponentType<LucideProps>> = {
     Sparkles, ShieldCheck, Layers, Scissors, Anchor, Stethoscope,
     Baby, AlignCenter, HeartPulse, ScanLine, Crosshair,
 };
@@ -79,35 +80,20 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                             </p>
                         </motion.div>
 
-                        {/* Objeto 3D interactivo */}
+                        {/* Imagen del Servicio */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.3, duration: 0.8 }}
-                            className="w-full md:w-1/2 h-[300px] sm:h-[400px] relative rounded-3xl overflow-hidden"
-                            style={{
-                                background: `radial-gradient(circle at center, ${servicio.colorHex}15 0%, transparent 70%)`
-                            }}
+                            className="w-full md:w-1/2 h-[300px] sm:h-[400px] relative rounded-3xl overflow-hidden glass-card"
                         >
-                            {servicio.splineUrl ? (
-                                <div className="absolute inset-[-20%] cursor-grab active:cursor-grabbing">
-                                    <SplineScene
-                                        scene={servicio.splineUrl}
-                                        fallbackImageSrc={`/images/servicios/${servicio.slug}.png`}
-                                        fallbackImageAlt={servicio.titulo}
-                                    />
-                                </div>
-                            ) : (
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <Image
-                                        src={`/images/servicios/${servicio.slug}.png`}
-                                        alt={servicio.titulo}
-                                        width={200}
-                                        height={200}
-                                        className="object-contain drop-shadow-2xl animate-[float_6s_ease-in-out_infinite]"
-                                    />
-                                </div>
-                            )}
+                            <Image
+                                src={servicio.imagen}
+                                alt={servicio.titulo}
+                                fill
+                                className="object-cover"
+                                priority
+                            />
                         </motion.div>
                     </div>
 
@@ -225,6 +211,32 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                 </div>
             </section>
 
+            {/* Riesgos y Cuidados */}
+            <section className="section-padding bg-[var(--color-bg-primary)]">
+                <div className="max-w-4xl mx-auto">
+                    <AnimatedSection className="mb-10 text-center">
+                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)]">
+                            Riesgos y Cuidados Post-Tratamiento
+                        </h2>
+                    </AnimatedSection>
+
+                    <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {servicio.riesgos.map((riesgo, i) => (
+                            <motion.div
+                                key={i}
+                                variants={staggerItemVariants}
+                                className="flex items-start gap-4 p-5 rounded-xl border border-[var(--color-accent-danger)]/20 bg-[var(--color-bg-card)] shadow-sm"
+                            >
+                                <div className="w-8 h-8 rounded-full bg-[var(--color-accent-danger)]/10 flex items-center justify-center flex-shrink-0 text-[var(--color-accent-danger)]">
+                                    !
+                                </div>
+                                <p className="text-[var(--color-text-secondary)] text-sm pt-1">{riesgo}</p>
+                            </motion.div>
+                        ))}
+                    </StaggerContainer>
+                </div>
+            </section>
+
             {/* CTA */}
             <section className="section-padding bg-bg-secondary">
                 <AnimatedSection>
@@ -308,12 +320,11 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                                                 border: `1px solid ${s.colorHex}20`,
                                             }}
                                         >
-                                            <Image
-                                                src={`/images/servicios/${s.slug}.png`}
-                                                alt={s.titulo}
-                                                width={36}
-                                                height={36}
-                                                className="object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-110"
+                                            <OtroIcon
+                                                size={24}
+                                                strokeWidth={1.5}
+                                                style={{ color: s.colorHex }}
+                                                className="drop-shadow-sm transition-transform duration-300 group-hover:scale-110"
                                             />
                                         </div>
                                         <h4 className="font-display font-bold text-slate-800 mb-2">{s.titulo}</h4>

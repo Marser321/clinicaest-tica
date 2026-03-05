@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Phone } from 'lucide-react';
 import { BookingModal } from '@/components/ui/BookingModal';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 const navLinks = [
     { label: 'Inicio', href: '#inicio' },
@@ -52,8 +53,8 @@ export function Header() {
                                 <span className="text-white font-display font-bold text-lg">OP</span>
                             </div>
                             <div className="hidden sm:flex flex-col">
-                                <span className="font-display font-bold text-sm tracking-wide text-white">OdontoPro</span>
-                                <span className="text-xs text-slate-400 -mt-0.5">Clínica Dental</span>
+                                <span className="font-display font-bold text-sm tracking-wide text-white">AestheticPro</span>
+                                <span className="text-xs text-slate-400 -mt-0.5">Clínica Estética</span>
                             </div>
                         </Link>
 
@@ -80,6 +81,7 @@ export function Header() {
                             <Link href="/dashboard" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
                                 Entrar al CRM (Demo)
                             </Link>
+                            <ThemeToggle />
                             <button
                                 onClick={() => setIsBookingOpen(true)}
                                 className="btn-primary text-sm !py-2.5 !px-5"
@@ -140,6 +142,10 @@ export function Header() {
                             >
                                 Entrar al CRM (Demo)
                             </Link>
+
+                            <div className="mt-2">
+                                <ThemeToggle />
+                            </div>
 
                             <button
                                 onClick={() => {

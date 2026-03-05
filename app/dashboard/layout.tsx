@@ -22,10 +22,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <aside className="w-64 flex-shrink-0 border-r border-white/5 bg-black/50 p-6 flex flex-col hidden md:flex">
                 <div className="flex items-center gap-3 mb-10 group">
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-900 flex items-center justify-center shadow-glow-accent">
-                        <span className="text-white font-display font-bold text-lg">OP</span>
+                        <span className="text-white font-display font-bold text-lg">AP</span>
                     </div>
                     <div className="flex flex-col">
-                        <span className="font-display font-bold text-sm text-white">OdontoPro</span>
+                        <span className="font-display font-bold text-sm text-white">AestheticPro</span>
                         <span className="text-xs text-red-500 font-medium">Panel CRM</span>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     </div>
                     <div className="flex flex-col flex-1 overflow-hidden">
                         <span className="text-xs font-medium text-white truncate">Cuenta Demo</span>
-                        <span className="text-[10px] text-slate-400">Dr. Principal</span>
+                        <span className="text-[10px] text-slate-400">Dr(a). Especialista</span>
                     </div>
                 </div>
             </aside>

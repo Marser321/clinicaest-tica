@@ -17,17 +17,17 @@ export function TriageWidget() {
 
     // Pregunta 1: Síntoma principal
     const symptoms = [
-        { id: 'dolor', icon: AlertCircle, label: 'Tengo dolor agudo', color: 'text-rose-500', bg: 'bg-rose-950/30' },
-        { id: 'estetica', icon: Sparkles, label: 'Quiero mejorar mi sonrisa', color: 'text-amber-500', bg: 'bg-amber-950/30' },
-        { id: 'chequeo', icon: HeartPulse, label: 'Chequeo de rutina / Limpieza', color: 'text-red-500', bg: 'bg-red-950/30' },
-        { id: 'ausencia', icon: Search, label: 'Me falta una pieza dental', color: 'text-indigo-500', bg: 'bg-indigo-950/30' },
+        { id: 'acne', icon: AlertCircle, label: 'Tengo acné severo o manchas', color: 'text-rose-500', bg: 'bg-rose-950/30' },
+        { id: 'estetica', icon: Sparkles, label: 'Quiero mejorar mi piel o rostro', color: 'text-amber-500', bg: 'bg-amber-950/30' },
+        { id: 'chequeo', icon: HeartPulse, label: 'Limpieza facial o hidratación', color: 'text-red-500', bg: 'bg-red-950/30' },
+        { id: 'ausencia', icon: Search, label: 'Quiero reducir medidas o celulitis', color: 'text-indigo-500', bg: 'bg-indigo-950/30' },
     ];
 
     // Pregunta 2 (Dinámica, pero simplificada al tiempo)
     const durations = [
-        { id: 'urgencia', label: '¡Es una urgencia ahora mismo!' },
+        { id: 'urgencia', label: 'Es un problema reciente y agudo' },
         { id: 'dias', label: 'Hace unos días' },
-        { id: 'meses', label: 'Hace semanas o meses' },
+        { id: 'meses', label: 'Es una inquietud de hace tiempo' },
     ];
 
     // Manejo de selecciones
@@ -51,34 +51,34 @@ export function TriageWidget() {
         const s = selections.symptom;
         const d = selections.duration;
 
-        if (s === 'dolor') {
+        if (s === 'acne') {
             return {
-                title: 'Atención de Urgencia / Endodoncia',
-                desc: 'El dolor agudo requiere atención inmediata para evitar infecciones mayores o pérdida de la pieza. Un especialista evaluará si requerís un tratamiento de conducto o indicación farmacológica.',
-                action: 'Agendar Urgencia',
+                title: 'Protocolo de Recuperación Cutánea',
+                desc: 'Los brotes de acné severo o manchas recientes requieren un abordaje médico especializado. Evaluaremos tu tipo de piel para aplicar peelings químicos o tecnología láser que controle la inflamación y regenere el tejido.',
+                action: 'Agendar Evaluación Médica',
                 urgent: true
             };
         }
         if (s === 'estetica') {
             return {
-                title: 'Evaluación de Diseño de Sonrisa',
-                desc: '¡Excelente decisión! Un especialista en estética evaluará tu caso para ofrecerte opciones como Carillas, Blanqueamiento u Ortodoncia Invisible.',
+                title: 'Evaluación Estética Facial',
+                desc: '¡Excelente decisión! Un especialista evaluará tu caso para ofrecerte opciones personalizadas como Toxina Botulínica, Rellenos o Bioestimuladores para potenciar tu belleza natural.',
                 action: 'Consultar por Estética',
                 urgent: false
             };
         }
         if (s === 'ausencia') {
             return {
-                title: 'Especialista en Implantes',
-                desc: 'La falta de piezas dentales puede causar problemas en la mordida. Los implantes de titanio son la solución definitiva y permanente que recomendamos.',
-                action: 'Evaluación para Implante',
+                title: 'Especialista en Estética Corporal',
+                desc: 'La medicina estética corporal actual ofrece excelentes resultados sin cirugía. Contamos con tecnología de vanguardia para lograr el contorno que buscas de forma segura y efectiva.',
+                action: 'Evaluación Corporal',
                 urgent: false
             };
         }
         return {
-            title: 'Odontología General Preventiva',
-            desc: 'La prevención es tu mejor aliada. Agendá un turno para realizar un examen completo, toma de radiografías digitales y una higiene profesional profunda.',
-            action: 'Agendar Chequeo',
+            title: 'Medicina Estética Preventiva',
+            desc: 'La prevención y el cuidado continuo son tus mejores aliados. Agendá un turno para realizar un examen de piel completo y un tratamiento de higiene e hidratación profunda.',
+            action: 'Agendar Cita',
             urgent: false
         };
     };
