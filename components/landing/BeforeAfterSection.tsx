@@ -50,7 +50,7 @@ export function BeforeAfterSection() {
                     {cases.map((item, index) => (
                         <AnimatedSection key={item.id} delay={0.2 + (index * 0.1)}>
                             <div className="glass-card overflow-hidden group">
-                                <div className="relative aspect-square w-full bg-black/50 overflow-hidden">
+                                <div className="relative aspect-square w-full bg-[var(--color-bg-primary)]/50 overflow-hidden">
                                     <Image
                                         src={item.image}
                                         alt={item.title}
@@ -58,8 +58,8 @@ export function BeforeAfterSection() {
                                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
                                     {/* Overlay Tags */}
-                                    <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
-                                        <span className="text-white text-xs font-semibold tracking-wide flex items-center gap-1.5">
+                                    <div className="absolute top-4 left-4 bg-[var(--color-bg-primary)]/60 backdrop-blur-md px-3 py-1 rounded-full border border-[var(--color-glass-border)]">
+                                        <span className="text-[var(--color-text-primary)] text-xs font-semibold tracking-wide flex items-center gap-1.5">
                                             <CheckCircle2 size={14} className="text-emerald-400" /> CASO DE ÉXITO
                                         </span>
                                     </div>

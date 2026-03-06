@@ -56,7 +56,7 @@
 }
 
 :root,
-[data-theme='dark'] {
+.dark {
   --bg-primary: #0A0A0A;
   --bg-secondary: #111111;
   --bg-tertiary: #1A1A1A;
@@ -68,11 +68,8 @@
   --glass-surface-heavy: rgba(20, 20, 20, 0.92);
 
   --accent: #DC2626;
-  /* red-600 */
   --accent-secondary: #991B1B;
-  /* red-800 */
   --accent-light: #FEF2F2;
-  /* red-50 */
   --accent-gold: #D97706;
   --accent-gold-light: #FFFBEB;
   --accent-success: #059669;
@@ -98,58 +95,119 @@
   --bg-cta-gradient: linear-gradient(135deg, #DC2626, #EF4444);
 }
 
-[data-theme='light'] {
-  --bg-primary: #F0F9FF;
-  /* sky-50 */
-  --bg-secondary: #E0F2FE;
-  /* sky-100 */
-  --bg-tertiary: #BAE6FD;
-  /* sky-200 */
+.light {
+  --bg-primary: #FAFAFA;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F3F4F6;
   --bg-card: #FFFFFF;
-  --bg-navy: #7DD3FC;
-  /* sky-300 */
+  --bg-navy: #F8FAFC;
 
-  --glass-surface: rgba(255, 255, 255, 0.75);
-  --glass-border: rgba(14, 165, 233, 0.15);
-  /* sky border */
-  --glass-surface-heavy: rgba(255, 255, 255, 0.92);
+  --glass-surface: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(153, 27, 27, 0.1);
+  --glass-surface-heavy: rgba(255, 255, 255, 0.95);
 
-  --accent: #0284C7;
-  /* sky-600 */
-  --accent-secondary: #0369A1;
-  /* sky-700 */
-  --accent-light: #F0F9FF;
-  /* sky-50 */
-  --accent-gold: #0284C7;
-  /* Re-using sky for light themes as gold replacement */
-  --accent-gold-light: #F0F9FF;
+  --accent: #991B1B;
+  --accent-secondary: #7F1D1D;
+  --accent-light: #FEF2F2;
+  --accent-gold: #D4AF37;
+  --accent-gold-light: #FEF3C7;
   --accent-success: #059669;
-  /* emerald-600 */
   --accent-danger: #E11D48;
-  /* rose-600 */
 
   --text-primary: #0F172A;
-  /* slate-900 */
   --text-secondary: #334155;
-  /* slate-700 */
   --text-muted: #64748B;
-  /* slate-500 */
-  --text-accent: #0284C7;
-  /* sky-600 */
+  --text-accent: #991B1B;
 
-  --shadow-glass-var: 0 8px 32px rgba(14, 165, 233, 0.1);
-  --shadow-glass-sm-var: 0 4px 16px rgba(14, 165, 233, 0.05);
-  --shadow-float-var: 0 20px 50px -12px rgba(14, 165, 233, 0.2);
-  --shadow-card-var: 0 4px 24px rgba(14, 165, 233, 0.08);
-  --shadow-card-hover-var: 0 12px 40px rgba(14, 165, 233, 0.25);
-  --shadow-glow-accent-var: 0 0 30px rgba(14, 165, 233, 0.3);
-  --shadow-glow-accent-strong-var: 0 0 40px rgba(14, 165, 233, 0.5);
+  --shadow-glass-var: 0 8px 32px rgba(153, 27, 27, 0.05);
+  --shadow-glass-sm-var: 0 4px 16px rgba(153, 27, 27, 0.03);
+  --shadow-float-var: 0 20px 50px -12px rgba(153, 27, 27, 0.1);
+  --shadow-card-var: 0 4px 24px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover-var: 0 12px 40px rgba(153, 27, 27, 0.12);
+  --shadow-glow-accent-var: 0 0 30px rgba(153, 27, 27, 0.15);
+  --shadow-glow-accent-strong-var: 0 0 40px rgba(153, 27, 27, 0.25);
 
-  --bg-hero-radial: radial-gradient(ellipse at 20% 50%, rgba(14, 165, 233, 0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(2, 132, 199, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
-  --bg-card-gradient: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(240, 249, 255, 1) 100%);
-  --bg-text-gradient: linear-gradient(135deg, #0284C7, #38BDF8, #0284C7);
-  --bg-gold-gradient: linear-gradient(135deg, #0284C7, #0EA5E9, #0284C7);
-  --bg-cta-gradient: linear-gradient(135deg, #0284C7, #0EA5E9);
+  --bg-hero-radial: radial-gradient(ellipse at 20% 50%, rgba(153, 27, 27, 0.04) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(212, 175, 55, 0.04) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(153, 27, 27, 0.03) 0%, transparent 50%);
+  --bg-card-gradient: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(250, 250, 250, 1) 100%);
+  --bg-text-gradient: linear-gradient(135deg, #991B1B, #DC2626, #991B1B);
+  --bg-gold-gradient: linear-gradient(135deg, #D4AF37, #FDE047, #D4AF37);
+  --bg-cta-gradient: linear-gradient(135deg, #991B1B, #DC2626);
+}
+
+/* --- Temas de Color (Overrides) --- */
+
+/* Tema Dorado (Gold) - Dark Mode */
+.dark.theme-gold {
+  --accent: #D97706;
+  /* Amber-600 */
+  --accent-secondary: #B45309;
+  /* Amber-700 */
+  --accent-light: #FFFBEB;
+  --accent-gold: #F59E0B;
+  --text-accent: #F59E0B;
+
+  --shadow-card-hover-var: 0 12px 40px rgba(217, 119, 6, 0.15);
+  --shadow-glow-accent-var: 0 0 30px rgba(217, 119, 6, 0.2);
+  --shadow-glow-accent-strong-var: 0 0 40px rgba(217, 119, 6, 0.4);
+
+  --bg-hero-radial: radial-gradient(ellipse at 20% 50%, rgba(217, 119, 6, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(180, 83, 9, 0.05) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(217, 119, 6, 0.04) 0%, transparent 50%);
+  --bg-text-gradient: linear-gradient(135deg, #F59E0B, #FDE68A, #F59E0B);
+  --bg-cta-gradient: linear-gradient(135deg, #D97706, #F59E0B);
+}
+
+/* Tema Dorado (Gold) - Light Mode */
+.light.theme-gold,
+.theme-gold {
+  --accent: #B45309;
+  --accent-secondary: #92400E;
+  --accent-light: #FFFBEB;
+  --accent-gold: #D4AF37;
+  --text-accent: #B45309;
+
+  --shadow-card-hover-var: 0 12px 40px rgba(180, 83, 9, 0.12);
+  --shadow-glow-accent-var: 0 0 30px rgba(180, 83, 9, 0.15);
+  --shadow-glow-accent-strong-var: 0 0 40px rgba(180, 83, 9, 0.25);
+
+  --bg-hero-radial: radial-gradient(ellipse at 20% 50%, rgba(180, 83, 9, 0.04) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(217, 119, 6, 0.04) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(180, 83, 9, 0.03) 0%, transparent 50%);
+  --bg-text-gradient: linear-gradient(135deg, #B45309, #D97706, #B45309);
+  --bg-cta-gradient: linear-gradient(135deg, #B45309, #D97706);
+}
+
+/* Tema Azul (Blue/Sky) - Dark Mode */
+.dark.theme-blue {
+  --accent: #0284c7;
+  /* Sky-600 */
+  --accent-secondary: #0369a1;
+  /* Sky-700 */
+  --accent-light: #f0f9ff;
+  --accent-gold: #0ea5e9;
+  --text-accent: #0ea5e9;
+
+  --shadow-card-hover-var: 0 12px 40px rgba(2, 132, 199, 0.15);
+  --shadow-glow-accent-var: 0 0 30px rgba(2, 132, 199, 0.2);
+  --shadow-glow-accent-strong-var: 0 0 40px rgba(2, 132, 199, 0.4);
+
+  --bg-hero-radial: radial-gradient(ellipse at 20% 50%, rgba(2, 132, 199, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(3, 105, 161, 0.05) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(2, 132, 199, 0.04) 0%, transparent 50%);
+  --bg-text-gradient: linear-gradient(135deg, #0ea5e9, #bae6fd, #0ea5e9);
+  --bg-cta-gradient: linear-gradient(135deg, #0284c7, #0ea5e9);
+}
+
+/* Tema Azul (Blue/Sky) - Light Mode */
+.light.theme-blue,
+.theme-blue {
+  --accent: #0369a1;
+  --accent-secondary: #075985;
+  --accent-light: #f0f9ff;
+  --accent-gold: #0284c7;
+  --text-accent: #0369a1;
+
+  --shadow-card-hover-var: 0 12px 40px rgba(3, 105, 161, 0.12);
+  --shadow-glow-accent-var: 0 0 30px rgba(3, 105, 161, 0.15);
+  --shadow-glow-accent-strong-var: 0 0 40px rgba(3, 105, 161, 0.25);
+
+  --bg-hero-radial: radial-gradient(ellipse at 20% 50%, rgba(3, 105, 161, 0.04) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(2, 132, 199, 0.04) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(3, 105, 161, 0.03) 0%, transparent 50%);
+  --bg-text-gradient: linear-gradient(135deg, #0369a1, #0284c7, #0369a1);
+  --bg-cta-gradient: linear-gradient(135deg, #0369a1, #0284c7);
 }
 
 /* --- Base --- */
@@ -168,44 +226,44 @@ body {
 /* --- Utilidades Custom --- */
 @layer utilities {
   .glass-panel {
-    background: rgba(20, 20, 20, 0.6);
+    background: var(--color-glass-surface);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--color-glass-border);
+    box-shadow: var(--shadow-glass);
   }
 
   .glass-panel-heavy {
-    background: rgba(10, 10, 10, 0.85);
+    background: var(--color-glass-surface-heavy);
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-glass-border);
+    box-shadow: var(--shadow-glass);
   }
 
   .glass-card {
-    background: rgba(26, 26, 26, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-glass-border);
     border-radius: 1rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-card);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
   .glass-card:hover {
-    border-color: rgba(220, 38, 38, 0.3);
-    box-shadow: 0 12px 40px rgba(220, 38, 38, 0.15);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-card-hover);
     transform: translateY(-4px);
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #EF4444, #FCA5A5);
+    background: var(--background-image-text-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, #FACC15, #FEF08A);
+    background: var(--background-image-gold-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -221,7 +279,7 @@ body {
     inset: -1px;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, rgba(220, 38, 38, 0.4), rgba(153, 27, 27, 0.1), rgba(220, 38, 38, 0.4));
+    background: var(--background-image-cta-gradient);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -229,17 +287,17 @@ body {
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, #DC2626, #EF4444);
+    background: var(--background-image-cta-gradient);
     color: #FFFFFF;
     font-weight: 700;
     border-radius: 9999px;
     padding: 0.875rem 2rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
+    box-shadow: var(--shadow-card);
   }
 
   .btn-primary:hover {
-    box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+    box-shadow: var(--shadow-card-hover);
     transform: translateY(-2px) scale(1.02);
   }
 

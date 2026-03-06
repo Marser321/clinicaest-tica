@@ -86,26 +86,26 @@ export function TriageWidget() {
     const result = getRecommendation();
 
     return (
-        <section className="py-20 bg-[#0A0A0A] relative overflow-hidden">
+        <section className="py-20 bg-[var(--color-bg-primary)] relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
                 <AnimatedSection className="text-center mb-10">
-                    <span className="text-red-500 text-sm font-semibold uppercase tracking-widest bg-red-950/30 px-3 py-1 rounded-full inline-block mb-3 border border-red-900/30">
+                    <span className="text-[var(--color-accent)] text-sm font-semibold uppercase tracking-widest bg-black/30 px-3 py-1 rounded-full inline-block mb-3 border border-[var(--color-accent)]/30">
                         Asistente Virtual
                     </span>
-                    <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4 drop-shadow-md">
+                    <h2 className="font-display text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4 drop-shadow-md">
                         Descubrí qué tratamiento necesitás
                     </h2>
-                    <p className="text-slate-300 max-w-xl mx-auto">
+                    <p className="text-[var(--color-text-secondary)] max-w-xl mx-auto">
                         Respondé 2 simples preguntas para que nuestro sistema te indique el especialista adecuado para tu caso.
                     </p>
                 </AnimatedSection>
 
                 {/* Contenedor Interactivo */}
-                <div className="bg-[#111111]/80 backdrop-blur-md rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.6)] border border-white/5 overflow-hidden min-h-[400px] flex flex-col relative">
+                <div className="bg-[var(--color-glass-surface)] backdrop-blur-md rounded-3xl shadow-glass-var border border-[var(--color-glass-border)] overflow-hidden min-h-[400px] flex flex-col relative">
                     {/* Barra de Progreso */}
                     <div className="w-full h-1 bg-white/5 relative">
                         <motion.div
-                            className="absolute top-0 left-0 h-full bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.8)]"
+                            className="absolute top-0 left-0 h-full bg-[var(--color-accent)] shadow-glow-accent"
                             initial={{ width: '0%' }}
                             animate={{
                                 width: step === 'start' ? '0%' :
@@ -128,12 +128,12 @@ export function TriageWidget() {
                                     className="text-center"
                                 >
                                     <div className="w-20 h-20 bg-red-950/40 rounded-full flex items-center justify-center mx-auto mb-6 border border-red-900/30 shadow-[0_0_20px_rgba(220,38,38,0.15)]">
-                                        <ShieldCheck size={36} className="text-red-500" />
+                                        <ShieldCheck size={36} className="text-[var(--color-accent)]" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-3">
+                                    <h3 className="text-2xl font-bold text-[var(--color-text-primary)] mb-3">
                                         ¿No sabés por dónde empezar?
                                     </h3>
-                                    <p className="text-slate-300 mb-8 max-w-md mx-auto">
+                                    <p className="text-[var(--color-text-secondary)] mb-8 max-w-md mx-auto">
                                         Iniciá nuestro diagnóstico rápido online. Te tomará menos de 30 segundos.
                                     </p>
                                     <button
@@ -154,7 +154,7 @@ export function TriageWidget() {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -50 }}
                                 >
-                                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 text-center drop-shadow-sm">
+                                    <h3 className="text-xl sm:text-2xl font-bold text-[var(--color-text-primary)] mb-6 text-center drop-shadow-sm">
                                         ¿Cuál es el motivo principal de tu consulta?
                                     </h3>
                                     <div className="grid sm:grid-cols-2 gap-4">
@@ -162,12 +162,12 @@ export function TriageWidget() {
                                             <button
                                                 key={s.id}
                                                 onClick={() => handleSymptomSelect(s.id)}
-                                                className="group text-left p-5 rounded-2xl border border-white/10 bg-black/40 hover:border-red-500/50 hover:bg-black/60 shadow-[0_4px_15px_rgba(0,0,0,0.5)] transition-all flex items-center gap-4"
+                                                className="group text-left p-5 rounded-2xl border border-[var(--color-glass-border)] bg-[var(--color-bg-primary)]/40 hover:border-[var(--color-accent)]/50 hover:bg-[var(--color-bg-primary)]/60 shadow-[0_4px_15px_rgba(0,0,0,0.5)] transition-all flex items-center gap-4"
                                             >
                                                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center border border-white/5 shrink-0 ${s.bg}`}>
                                                     <s.icon size={24} className={s.color} />
                                                 </div>
-                                                <span className="font-semibold text-slate-200 group-hover:text-white transition-colors">
+                                                <span className="font-semibold text-slate-200 group-hover:text-[var(--color-text-primary)] transition-colors">
                                                     {s.label}
                                                 </span>
                                             </button>
@@ -184,7 +184,7 @@ export function TriageWidget() {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -50 }}
                                 >
-                                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 text-center drop-shadow-sm">
+                                    <h3 className="text-xl sm:text-2xl font-bold text-[var(--color-text-primary)] mb-6 text-center drop-shadow-sm">
                                         ¿Desde hace cuánto tiempo sentís esto / lo estás pensando?
                                     </h3>
                                     <div className="flex flex-col gap-3 max-w-md mx-auto">
@@ -192,14 +192,14 @@ export function TriageWidget() {
                                             <button
                                                 key={d.id}
                                                 onClick={() => handleDurationSelect(d.id)}
-                                                className="p-4 rounded-xl border border-white/10 bg-black/40 hover:bg-red-950/20 hover:border-red-500/40 hover:text-white transition-all font-medium text-slate-300 text-center shadow-[0_4px_15px_rgba(0,0,0,0.4)] hover:shadow-[0_0_15px_rgba(220,38,38,0.15)]"
+                                                className="p-4 rounded-xl border border-[var(--color-glass-border)] bg-[var(--color-bg-primary)]/40 hover:bg-black/20 hover:border-[var(--color-accent)]/40 hover:text-[var(--color-text-primary)] transition-all font-medium text-[var(--color-text-secondary)] text-center shadow-[0_4px_15px_rgba(0,0,0,0.4)] hover:shadow-[var(--shadow-glow-accent-var)]"
                                             >
                                                 {d.label}
                                             </button>
                                         ))}
                                         <button
                                             onClick={() => setStep('symptom')}
-                                            className="text-slate-400 text-sm mt-4 hover:text-red-400 transition-colors underline decoration-slate-600 hover:decoration-red-400"
+                                            className="text-[var(--color-text-muted)] text-sm mt-4 hover:text-[var(--color-accent)] transition-colors underline decoration-[var(--color-glass-border)] hover:decoration-[var(--color-accent)]"
                                         >
                                             Volver atrás
                                         </button>
@@ -216,28 +216,28 @@ export function TriageWidget() {
                                     className="text-center"
                                 >
                                     <div className="mb-6 inline-block p-4 bg-gradient-to-br from-red-950/40 to-black/60 rounded-2xl border border-red-900/30 shadow-[0_4px_20px_rgba(220,38,38,0.15)]">
-                                        <h3 className="text-sm font-semibold uppercase tracking-wider text-red-500 mb-2">
+                                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)] mb-2">
                                             Recomendación del Triage
                                         </h3>
-                                        <h4 className="text-2xl font-bold text-white drop-shadow-md">
+                                        <h4 className="text-2xl font-bold text-[var(--color-text-primary)] drop-shadow-md">
                                             {result.title}
                                         </h4>
                                     </div>
-                                    <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-8">
+                                    <p className="text-[var(--color-text-secondary)] text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-8">
                                         {result.desc}
                                     </p>
 
                                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                                         <a
                                             href="#contacto"
-                                            className={`${result.urgent ? 'bg-rose-600 hover:bg-rose-700 shadow-[0_0_20px_rgba(225,29,72,0.4)] text-white' : 'btn-primary shadow-[0_4px_20px_rgba(220,38,38,0.3)]'} px-8 py-3.5 rounded-xl font-semibold transition-all flex items-center gap-2 border border-white/10`}
+                                            className={`${result.urgent ? 'bg-rose-600 hover:bg-rose-700 shadow-[0_0_20px_rgba(225,29,72,0.4)] text-white' : 'btn-primary shadow-glow-accent'} px-8 py-3.5 rounded-xl font-semibold transition-all flex items-center gap-2 border border-[var(--color-glass-border)]`}
                                         >
                                             {result.action}
                                             <ArrowRight size={18} />
                                         </a>
                                         <button
                                             onClick={resetTriage}
-                                            className="flex items-center gap-2 text-slate-400 hover:text-red-400 font-medium py-3 px-4 transition-colors"
+                                            className="flex items-center gap-2 text-[var(--color-text-muted)] hover:text-[var(--color-accent)] font-medium py-3 px-4 transition-colors"
                                         >
                                             <RefreshCcw size={16} />
                                             Rehacer test

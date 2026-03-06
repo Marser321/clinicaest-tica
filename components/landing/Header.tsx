@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Phone } from 'lucide-react';
 import { BookingModal } from '@/components/ui/BookingModal';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { ThemeColorSwitcher } from '@/components/ui/ThemeColorSwitcher';
 
 const navLinks = [
     { label: 'Inicio', href: '#inicio' },
@@ -42,19 +43,19 @@ export function Header() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, ease: [0.25, 0.8, 0.25, 1] }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                    ? 'bg-black/80 backdrop-blur-xl shadow-[0_1px_20px_rgba(220,38,38,0.08)] border-b border-white/5'
+                    ? 'bg-[var(--color-bg-primary)]/80 backdrop-blur-xl shadow-[0_1px_20px_rgba(220,38,38,0.08)] border-b border-white/5'
                     : 'bg-transparent'
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16 md:h-20">
                         <Link href="/" className="flex items-center gap-3 group">
-                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-900 flex items-center justify-center shadow-glow-accent group-hover:shadow-glow-accent-strong transition-shadow duration-300 border border-red-500/20">
-                                <span className="text-white font-display font-bold text-lg">OP</span>
+                            <div className="w-10 h-10 rounded-xl bg-[var(--background-image-cta-gradient)] flex items-center justify-center shadow-glow-accent group-hover:shadow-[var(--shadow-glow-accent-strong-var)] transition-shadow duration-300 border border-[var(--color-accent)]/20">
+                                <span className="text-[var(--color-text-primary)] font-display font-bold text-lg">OP</span>
                             </div>
                             <div className="hidden sm:flex flex-col">
-                                <span className="font-display font-bold text-sm tracking-wide text-white">AestheticPro</span>
-                                <span className="text-xs text-slate-400 -mt-0.5">Clínica Estética</span>
+                                <span className="font-display font-bold text-sm tracking-wide text-[var(--color-text-primary)]">AestheticPro</span>
+                                <span className="text-xs text-[var(--color-text-muted)] -mt-0.5">Clínica Estética</span>
                             </div>
                         </Link>
 
@@ -64,7 +65,7 @@ export function Header() {
                                 <a
                                     key={link.href}
                                     href={link.href}
-                                    className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-red-500 transition-colors duration-300 rounded-lg hover:bg-white/5"
+                                    className="px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-accent)] transition-colors duration-300 rounded-lg hover:bg-[var(--color-bg-tertiary)]"
                                 >
                                     {link.label}
                                 </a>
@@ -73,14 +74,15 @@ export function Header() {
 
                         {/* CTA Desktop */}
                         <div className="hidden lg:flex items-center gap-4">
-                            <a href="tel:+59800000000" className="flex items-center gap-2 text-sm text-slate-400 hover:text-red-500 transition-colors">
+                            <a href="tel:+59800000000" className="flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text-accent)] transition-colors">
                                 <Phone size={16} />
                                 <span>Llamar</span>
                             </a>
-                            <div className="w-px h-6 bg-white/10 mx-2"></div>
-                            <Link href="/dashboard" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+                            <div className="w-px h-6 bg-[var(--color-glass-border)] mx-2"></div>
+                            <Link href="/dashboard" className="text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors">
                                 Entrar al CRM (Demo)
                             </Link>
+                            <ThemeColorSwitcher />
                             <ThemeToggle />
                             <button
                                 onClick={() => setIsBookingOpen(true)}
@@ -93,7 +95,7 @@ export function Header() {
                         {/* Hamburger Mobile */}
                         <button
                             onClick={() => setMobileOpen(!mobileOpen)}
-                            className="lg:hidden w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-white/10 transition-colors"
+                            className="lg:hidden w-10 h-10 flex items-center justify-center text-[var(--color-text-primary)] rounded-lg hover:bg-[var(--color-bg-tertiary)] transition-colors"
                             aria-label="Menú"
                         >
                             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -110,7 +112,7 @@ export function Header() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl lg:hidden"
+                        className="fixed inset-0 z-40 bg-[var(--color-bg-primary)]/95 backdrop-blur-2xl lg:hidden"
                     >
                         <motion.nav
                             initial={{ opacity: 0, y: 20 }}
@@ -127,7 +129,7 @@ export function Header() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.15 + i * 0.05 }}
-                                    className="text-2xl font-display font-semibold text-white hover:text-red-500 transition-colors"
+                                    className="text-2xl font-display font-semibold text-[var(--color-text-primary)] hover:text-[var(--color-text-accent)] transition-colors"
                                 >
                                     {link.label}
                                 </motion.a>
@@ -138,12 +140,13 @@ export function Header() {
                             <Link
                                 href="/dashboard"
                                 onClick={() => setMobileOpen(false)}
-                                className="text-xl font-display font-medium text-slate-300 hover:text-white transition-colors"
+                                className="text-xl font-display font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
                             >
                                 Entrar al CRM (Demo)
                             </Link>
 
-                            <div className="mt-2">
+                            <div className="mt-2 flex items-center justify-center gap-4">
+                                <ThemeColorSwitcher />
                                 <ThemeToggle />
                             </div>
 

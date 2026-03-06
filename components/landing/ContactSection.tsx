@@ -41,7 +41,7 @@ export function ContactSection() {
     };
 
     return (
-        <section id="contacto" className="section-padding bg-[#111111] relative overflow-hidden">
+        <section id="contacto" className="section-padding bg-[var(--color-bg-secondary)] relative overflow-hidden">
             {/* Decoración */}
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-red-900/10 blur-[100px] pointer-events-none" />
 
@@ -51,11 +51,11 @@ export function ContactSection() {
                     <span className="text-red-500 text-sm font-semibold uppercase tracking-widest drop-shadow-sm">
                         Contacto
                     </span>
-                    <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-4 text-white drop-shadow-md">
+                    <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-4 text-[var(--color-text-primary)] drop-shadow-md">
                         Agendá tu{' '}
                         <span className="text-red-500 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">consulta</span>
                     </h2>
-                    <p className="text-slate-300 max-w-xl mx-auto">
+                    <p className="text-[var(--color-text-secondary)] max-w-xl mx-auto">
                         Estamos para ayudarte. Escribinos por WhatsApp o completá el formulario
                         y te responderemos a la brevedad.
                     </p>
@@ -72,13 +72,13 @@ export function ContactSection() {
                                 rel="noopener noreferrer"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="flex items-center gap-4 bg-black/40 backdrop-blur-md rounded-2xl p-6 group cursor-pointer border border-green-900/30 shadow-[0_4px_24px_rgba(0,0,0,0.5)] hover:border-green-500/50 hover:shadow-[0_8px_32px_rgba(16,185,129,0.15)] transition-all"
+                                className="flex items-center gap-4 bg-[var(--color-bg-primary)]/40 backdrop-blur-md rounded-2xl p-6 group cursor-pointer border border-green-900/30 shadow-[0_4px_24px_rgba(0,0,0,0.5)] hover:border-green-500/50 hover:shadow-[0_8px_32px_rgba(16,185,129,0.15)] transition-all"
                             >
                                 <div className="w-14 h-14 rounded-xl bg-green-950/40 border border-green-900/30 flex items-center justify-center group-hover:bg-green-900/60 transition-colors flex-shrink-0">
                                     <MessageCircle size={26} className="text-green-500" />
                                 </div>
                                 <div>
-                                    <h4 className="font-display font-bold text-white">WhatsApp</h4>
+                                    <h4 className="font-display font-bold text-[var(--color-text-primary)]">WhatsApp</h4>
                                     <p className="text-green-500 text-sm font-medium">Escribinos ahora →</p>
                                 </div>
                             </motion.a>
@@ -103,7 +103,7 @@ export function ContactSection() {
                                             <item.icono size={18} className="text-red-500" />
                                         </div>
                                         <div>
-                                            <p className="text-slate-400 text-xs uppercase tracking-wider">{item.label}</p>
+                                            <p className="text-[var(--color-text-muted)] text-xs uppercase tracking-wider">{item.label}</p>
                                             <p className="text-slate-200 text-sm font-medium">{item.valor}</p>
                                         </div>
                                     </motion.div>
@@ -115,12 +115,12 @@ export function ContactSection() {
                     {/* Formulario */}
                     <AnimatedSection direction="right" delay={0.2}>
                         <form
-                            className="bg-black/40 backdrop-blur-md rounded-2xl p-6 sm:p-8 space-y-5 border border-white/5 shadow-[0_8px_40px_rgba(0,0,0,0.6)]"
+                            className="bg-[var(--color-bg-primary)]/40 backdrop-blur-md rounded-2xl p-6 sm:p-8 space-y-5 border border-white/5 shadow-[0_8px_40px_rgba(0,0,0,0.6)]"
                             onSubmit={handleSubmit}
                         >
                             <div className="grid sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label htmlFor="nombre" className="block text-xs font-medium text-slate-400 mb-2 uppercase tracking-wider">
+                                    <label htmlFor="nombre" className="block text-xs font-medium text-[var(--color-text-muted)] mb-2 uppercase tracking-wider">
                                         Nombre
                                     </label>
                                     <input
@@ -130,11 +130,11 @@ export function ContactSection() {
                                         value={formData.nombre}
                                         onChange={handleChange}
                                         placeholder="Tu nombre"
-                                        className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all font-sans"
+                                        className="w-full bg-[var(--color-bg-tertiary)] border border-[var(--color-glass-border)] rounded-xl px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-all font-sans"
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="telefono" className="block text-xs font-medium text-slate-400 mb-2 uppercase tracking-wider">
+                                    <label htmlFor="telefono" className="block text-xs font-medium text-[var(--color-text-muted)] mb-2 uppercase tracking-wider">
                                         Teléfono
                                     </label>
                                     <input
@@ -143,20 +143,20 @@ export function ContactSection() {
                                         value={formData.telefono}
                                         onChange={handleChange}
                                         placeholder="Tu teléfono"
-                                        className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all font-sans"
+                                        className="w-full bg-[var(--color-bg-tertiary)] border border-[var(--color-glass-border)] rounded-xl px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-all font-sans"
                                     />
                                 </div>
                             </div>
 
                             <div>
-                                <label htmlFor="servicio" className="block text-xs font-medium text-slate-400 mb-2 uppercase tracking-wider">
+                                <label htmlFor="servicio" className="block text-xs font-medium text-[var(--color-text-muted)] mb-2 uppercase tracking-wider">
                                     Servicio de interés
                                 </label>
                                 <select
                                     id="servicio"
                                     value={formData.servicio}
                                     onChange={handleChange}
-                                    className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all appearance-none [&>option]:bg-[#1A1A1A]"
+                                    className="w-full bg-[var(--color-bg-tertiary)] border border-[var(--color-glass-border)] rounded-xl px-4 py-3 text-sm text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-all appearance-none [&>option]:bg-[var(--color-bg-tertiary)]"
                                 >
                                     <option value="">Seleccioná un servicio</option>
                                     <option value="Toxina Botulínica">Toxina Botulínica</option>
@@ -170,7 +170,7 @@ export function ContactSection() {
                             </div>
 
                             <div>
-                                <label htmlFor="mensaje" className="block text-xs font-medium text-slate-400 mb-2 uppercase tracking-wider">
+                                <label htmlFor="mensaje" className="block text-xs font-medium text-[var(--color-text-muted)] mb-2 uppercase tracking-wider">
                                     Mensaje
                                 </label>
                                 <textarea
@@ -180,7 +180,7 @@ export function ContactSection() {
                                     value={formData.mensaje}
                                     onChange={handleChange}
                                     placeholder="Contanos en qué podemos ayudarte..."
-                                    className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all resize-none font-sans"
+                                    className="w-full bg-[var(--color-bg-tertiary)] border border-[var(--color-glass-border)] rounded-xl px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-all resize-none font-sans"
                                 />
                             </div>
 

@@ -7,6 +7,7 @@ import {
     Sparkles, ShieldCheck, Layers, Scissors, Anchor, Stethoscope,
     Baby, AlignCenter, HeartPulse, ScanLine, Crosshair,
     ArrowLeft, ArrowRight, CheckCircle, MessageCircle,
+    Gem, Footprints, Palette,
 } from 'lucide-react';
 import Image from 'next/image';
 import { servicios, getServicioBySlug } from '@/lib/servicios-data';
@@ -18,6 +19,7 @@ import { LucideProps } from 'lucide-react';
 const iconMap: Record<string, React.ComponentType<LucideProps>> = {
     Sparkles, ShieldCheck, Layers, Scissors, Anchor, Stethoscope,
     Baby, AlignCenter, HeartPulse, ScanLine, Crosshair,
+    Gem, Footprints, Palette,
 };
 
 export default function ServicioPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -39,7 +41,7 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
     return (
         <div className="pt-20">
             {/* Hero del Servicio */}
-            <section className="section-padding relative overflow-hidden bg-white">
+            <section className="section-padding relative overflow-hidden bg-[var(--color-bg-primary)] transition-colors duration-500">
                 {/* Glow decorativo del color del servicio */}
                 <div
                     className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full blur-[120px] pointer-events-none opacity-20"
@@ -56,14 +58,14 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                     >
                         <Link
                             href="/#servicios"
-                            className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-accent transition-colors"
+                            className="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
                         >
                             <ArrowLeft size={16} />
                             Volver a Servicios
                         </Link>
                     </motion.div>
 
-                    {/* Hero Titulo y Modelo 3D */}
+                    {/* Hero Titulo e Imagen */}
                     <div className="flex flex-col md:flex-row items-center justify-between gap-10 mb-12">
                         {/* Texto */}
                         <motion.div
@@ -72,10 +74,10 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                             transition={{ delay: 0.2 }}
                             className="flex-1"
                         >
-                            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-4">
+                            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-[var(--color-text-primary)] mb-4">
                                 {servicio.titulo}
                             </h1>
-                            <p className="text-slate-400 text-lg sm:text-xl">
+                            <p className="text-[var(--color-text-secondary)] text-lg sm:text-xl">
                                 {servicio.descripcionCorta}
                             </p>
                         </motion.div>
@@ -85,7 +87,7 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.3, duration: 0.8 }}
-                            className="w-full md:w-1/2 h-[300px] sm:h-[400px] relative rounded-3xl overflow-hidden glass-card"
+                            className="w-full md:w-1/2 h-[300px] sm:h-[400px] relative rounded-3xl overflow-hidden glass-card border border-[var(--color-glass-border)]"
                         >
                             <Image
                                 src={servicio.imagen}
@@ -102,9 +104,9 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="bg-white rounded-2xl p-6 sm:p-8 mb-12 border border-slate-100 shadow-[0_4px_24px_rgba(15,23,42,0.06)]"
+                        className="glass-card rounded-2xl p-6 sm:p-8 mb-12 border border-[var(--color-glass-border)] bg-[var(--color-bg-card)]"
                     >
-                        <p className="text-slate-500 text-base sm:text-lg leading-relaxed">
+                        <p className="text-[var(--color-text-secondary)] text-base sm:text-lg leading-relaxed">
                             {servicio.descripcionLarga}
                         </p>
                     </motion.div>
@@ -112,10 +114,10 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* Beneficios */}
-            <section className="section-padding bg-bg-secondary">
+            <section className="section-padding bg-[var(--color-bg-secondary)] transition-colors duration-500">
                 <div className="max-w-4xl mx-auto">
                     <AnimatedSection className="mb-10">
-                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900">
+                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)]">
                             Beneficios del{' '}
                             <span className="text-gradient">{servicio.titulo}</span>
                         </h2>
@@ -126,14 +128,14 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                             <motion.div
                                 key={i}
                                 variants={staggerItemVariants}
-                                className="flex items-start gap-4 bg-white rounded-xl p-5 group border border-slate-100 shadow-[0_2px_12px_rgba(15,23,42,0.04)]"
+                                className="flex items-start gap-4 rounded-xl p-5 group border border-[var(--color-glass-border)] bg-[var(--color-bg-card)] shadow-sm transition-colors duration-300"
                             >
                                 <CheckCircle
                                     size={22}
                                     className="flex-shrink-0 mt-0.5"
                                     style={{ color: servicio.colorHex }}
                                 />
-                                <p className="text-slate-600 text-base">{beneficio}</p>
+                                <p className="text-[var(--color-text-secondary)] text-base">{beneficio}</p>
                             </motion.div>
                         ))}
                     </StaggerContainer>
@@ -141,10 +143,10 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* Proceso */}
-            <section className="section-padding bg-white">
+            <section className="section-padding bg-[var(--color-bg-primary)] transition-colors duration-500">
                 <div className="max-w-4xl mx-auto">
                     <AnimatedSection className="mb-12">
-                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-center text-slate-900">
+                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-center text-[var(--color-text-primary)]">
                             Proceso{' '}
                             <span className="text-gradient">paso a paso</span>
                         </h2>
@@ -152,18 +154,20 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
 
                     <div className="relative mt-16">
                         {/* Línea horizontal en desktop, vertical en mobile */}
-                        <div className="hidden md:block absolute top-[28px] left-0 right-0 h-1 bg-slate-100 rounded-full overflow-hidden">
+                        <div className="hidden md:block absolute top-[28px] left-0 right-0 h-1 bg-[var(--color-glass-border)] rounded-full overflow-hidden">
                             <motion.div
-                                className="h-full bg-gradient-to-r from-cyan-400 to-indigo-500"
+                                className="h-full"
+                                style={{ background: `linear-gradient(to right, ${servicio.colorHex}, var(--color-accent))` }}
                                 initial={{ width: "0%" }}
                                 whileInView={{ width: "100%" }}
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 1.5, ease: "easeInOut" }}
                             />
                         </div>
-                        <div className="block md:hidden absolute left-6 top-0 bottom-0 w-1 bg-slate-100 rounded-full overflow-hidden">
+                        <div className="block md:hidden absolute left-6 top-0 bottom-0 w-1 bg-[var(--color-glass-border)] rounded-full overflow-hidden">
                             <motion.div
-                                className="w-full bg-gradient-to-b from-cyan-400 to-indigo-500"
+                                className="w-full"
+                                style={{ background: `linear-gradient(to bottom, ${servicio.colorHex}, var(--color-accent))` }}
                                 initial={{ height: "0%" }}
                                 whileInView={{ height: "100%" }}
                                 viewport={{ once: true }}
@@ -183,7 +187,7 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                                 >
                                     {/* Número Flotante Interactivo */}
                                     <div
-                                        className="w-12 h-12 md:w-14 md:h-14 rounded-2xl flex items-center justify-center flex-shrink-0 font-display font-bold text-lg relative bg-white shadow-xl transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-110 group-hover:shadow-2xl"
+                                        className="w-12 h-12 md:w-14 md:h-14 rounded-2xl flex items-center justify-center flex-shrink-0 font-display font-bold text-lg relative bg-[var(--color-bg-card)] shadow-xl transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-110 group-hover:shadow-2xl"
                                         style={{
                                             color: servicio.colorHex,
                                         }}
@@ -197,10 +201,10 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                                     </div>
 
                                     <div className="pt-2 md:pt-4 flex-1">
-                                        <h4 className="font-display font-bold text-slate-800 text-base md:text-lg mb-2 transition-colors duration-300 pointer-events-none" style={{ color: 'inherit' }}>
-                                            <span className="group-hover:text-accent transition-colors">{paso.paso}</span>
+                                        <h4 className="font-display font-bold text-[var(--color-text-primary)] text-base md:text-lg mb-2 transition-colors duration-300">
+                                            <span className="group-hover:text-[var(--color-accent)] transition-colors">{paso.paso}</span>
                                         </h4>
-                                        <p className="text-slate-500 text-sm leading-relaxed group-hover:text-slate-600 transition-colors">
+                                        <p className="text-[var(--color-text-muted)] text-sm leading-relaxed group-hover:text-[var(--color-text-secondary)] transition-colors">
                                             {paso.detalle}
                                         </p>
                                     </div>
@@ -212,7 +216,7 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* Riesgos y Cuidados */}
-            <section className="section-padding bg-[var(--color-bg-primary)]">
+            <section className="section-padding bg-[var(--color-bg-secondary)] transition-colors duration-500">
                 <div className="max-w-4xl mx-auto">
                     <AnimatedSection className="mb-10 text-center">
                         <h2 className="font-display text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)]">
@@ -227,7 +231,7 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                                 variants={staggerItemVariants}
                                 className="flex items-start gap-4 p-5 rounded-xl border border-[var(--color-accent-danger)]/20 bg-[var(--color-bg-card)] shadow-sm"
                             >
-                                <div className="w-8 h-8 rounded-full bg-[var(--color-accent-danger)]/10 flex items-center justify-center flex-shrink-0 text-[var(--color-accent-danger)]">
+                                <div className="w-8 h-8 rounded-full bg-[var(--color-accent-danger)]/10 flex items-center justify-center flex-shrink-0 text-[var(--color-accent-danger)] font-bold">
                                     !
                                 </div>
                                 <p className="text-[var(--color-text-secondary)] text-sm pt-1">{riesgo}</p>
@@ -238,13 +242,13 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* CTA */}
-            <section className="section-padding bg-bg-secondary">
+            <section className="section-padding bg-[var(--color-bg-primary)] transition-colors duration-500">
                 <AnimatedSection>
-                    <div className="max-w-2xl mx-auto text-center bg-white rounded-3xl p-8 sm:p-12 shadow-[0_12px_50px_rgba(15,23,42,0.08)] border border-slate-100">
-                        <h3 className="font-display text-2xl sm:text-3xl font-bold mb-4 text-slate-900">
+                    <div className="max-w-2xl mx-auto text-center glass-card rounded-3xl p-8 sm:p-12 border border-[var(--color-glass-border)] bg-[var(--color-bg-card)]">
+                        <h3 className="font-display text-2xl sm:text-3xl font-bold mb-4 text-[var(--color-text-primary)]">
                             ¿Te interesa este tratamiento?
                         </h3>
-                        <p className="text-slate-400 mb-8">
+                        <p className="text-[var(--color-text-muted)] mb-8">
                             Agendá una consulta de evaluación sin compromiso. Te asesoramos de forma personalizada.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -266,13 +270,13 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* Navegación entre servicios */}
-            <section className="section-padding bg-white">
+            <section className="py-8 px-6 md:px-8 lg:px-16 bg-[var(--color-bg-primary)] border-t border-b border-[var(--color-glass-border)] transition-colors duration-500">
                 <div className="max-w-4xl mx-auto">
                     <div className="flex justify-between items-center">
                         {prevServicio ? (
                             <Link
                                 href={`/servicios/${prevServicio.slug}`}
-                                className="flex items-center gap-2 text-slate-400 hover:text-accent transition-colors group"
+                                className="flex items-center gap-2 text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors group"
                             >
                                 <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
                                 <span className="text-sm">{prevServicio.titulo}</span>
@@ -283,7 +287,7 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                         {nextServicio ? (
                             <Link
                                 href={`/servicios/${nextServicio.slug}`}
-                                className="flex items-center gap-2 text-slate-400 hover:text-accent transition-colors group"
+                                className="flex items-center gap-2 text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors group"
                             >
                                 <span className="text-sm">{nextServicio.titulo}</span>
                                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -296,10 +300,10 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* Otros servicios */}
-            <section className="section-padding bg-bg-secondary">
+            <section className="section-padding bg-[var(--color-bg-primary)] transition-colors duration-500">
                 <div className="max-w-6xl mx-auto">
                     <AnimatedSection className="text-center mb-10">
-                        <h3 className="font-display text-2xl font-bold text-slate-900">
+                        <h3 className="font-display text-2xl font-bold text-[var(--color-text-primary)]">
                             Otros servicios que pueden interesarte
                         </h3>
                     </AnimatedSection>
@@ -311,7 +315,7 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                                 <motion.div key={s.slug} variants={staggerItemVariants}>
                                     <Link
                                         href={`/servicios/${s.slug}`}
-                                        className="bg-white rounded-2xl p-6 flex flex-col h-full group cursor-pointer border border-slate-100 shadow-[0_4px_24px_rgba(15,23,42,0.05)] hover:shadow-[0_12px_40px_rgba(8,145,178,0.1)] hover:border-cyan-200/50 transition-all duration-400"
+                                        className="glass-card rounded-2xl p-6 flex flex-col h-full group cursor-pointer border border-[var(--color-glass-border)] bg-[var(--color-bg-card)] hover:border-[var(--color-accent)]/30 hover:shadow-xl transition-all duration-400"
                                     >
                                         <div
                                             className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
@@ -327,8 +331,8 @@ export default function ServicioPage({ params }: { params: Promise<{ slug: strin
                                                 className="drop-shadow-sm transition-transform duration-300 group-hover:scale-110"
                                             />
                                         </div>
-                                        <h4 className="font-display font-bold text-slate-800 mb-2">{s.titulo}</h4>
-                                        <p className="text-slate-400 text-sm leading-relaxed flex-1">{s.descripcionCorta}</p>
+                                        <h4 className="font-display font-bold text-[var(--color-text-primary)] mb-2">{s.titulo}</h4>
+                                        <p className="text-[var(--color-text-muted)] text-sm leading-relaxed flex-1">{s.descripcionCorta}</p>
                                     </Link>
                                 </motion.div>
                             );

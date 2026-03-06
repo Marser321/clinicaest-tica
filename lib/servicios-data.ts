@@ -1,5 +1,5 @@
 // ============================================
-// Datos enriquecidos de cada servicio dental
+// Datos enriquecidos de cada servicio estético
 // ============================================
 
 export interface Servicio {
@@ -202,7 +202,131 @@ export const servicios: Servicio[] = [
         color: 'text-cyan-400',
         colorHex: '#22D3EE',
         imagen: '/images/service_prp.png',
-    }
+    },
+    {
+        slug: 'manicura-nail-art',
+        titulo: 'Manicura & Nail Art',
+        descripcionCorta:
+            'Lucí uñas impecables con esmaltado semipermanente, gel, acrílico y diseños de nail art exclusivos.',
+        descripcionLarga:
+            'Nuestro servicio de manicura premium va mucho más allá de un simple esmaltado. Ofrecemos técnicas avanzadas como uñas en gel, acrílico esculpido, soft gel tips y esmaltado semipermanente de larga duración. Nuestras nail artists están capacitadas en las últimas tendencias internacionales: nail art con foils, encapsulados, efecto espejo cromado, french invertido, diseños geométricos, encaje 3D y más. Cada sesión comienza con un cuidado integral de la cutícula y preparación de la lámina ungueal para garantizar adherencia perfecta y duración máxima del trabajo.',
+        beneficios: [
+            'Esmaltado semipermanente que dura de 3 a 4 semanas sin descascararse',
+            'Fortalecimiento de uñas débiles o quebradizas con gel builder o acrílico',
+            'Diseños artísticos exclusivos y personalizados',
+            'Productos hipoalergénicos y libres de sustancias agresivas (10-free)',
+            'Cuidado integral de cutícula y lámina ungueal en cada sesión',
+        ],
+        proceso: [
+            { paso: 'Preparación', detalle: 'Limpieza, desinfección y retiro de esmaltado anterior con técnica segura' },
+            { paso: 'Cuidado de Cutícula', detalle: 'Hidratación y empuje suave de cutícula con herramientas esterilizadas' },
+            { paso: 'Modelado', detalle: 'Esculpido con gel/acrílico o aplicación de tips según la técnica elegida' },
+            { paso: 'Diseño & Color', detalle: 'Aplicación de esmaltado y diseño de nail art personalizado' },
+            { paso: 'Sellado', detalle: 'Top coat de brillo o mate, hidratación final con aceite de cutículas' },
+        ],
+        riesgos: [
+            'Reacciones alérgicas poco frecuentes a ciertos monómeros acrílicos (test previo disponible)',
+            'Debilitamiento temporal de la lámina ungueal si se retira el producto sin técnica adecuada',
+            'Se recomienda descanso entre aplicaciones prolongadas de acrílico (cada 4-5 meses)',
+        ],
+        icono: 'Gem',
+        color: 'text-rose-400',
+        colorHex: '#FB7185',
+        imagen: '/images/service_nails.png',
+    },
+    {
+        slug: 'pedicura-spa',
+        titulo: 'Pedicura Spa',
+        descripcionCorta:
+            'Regalale a tus pies un tratamiento completo: exfoliación, hidratación profunda, spa relajante y esmaltado impecable.',
+        descripcionLarga:
+            'La pedicura spa es una experiencia de bienestar integral para tus pies. Comenzamos con un baño relajante con sales aromáticas y aceites esenciales, seguido de exfoliación profunda para eliminar callosidades y piel seca. Incluye masaje descontracturante de pies y pantorrillas, hidratación intensiva con envolturas de parafina o mascarillas nutritivas, y finaliza con un esmaltado de alta calidad (convencional o semipermanente). Es el tratamiento ideal para quienes pasan mucho tiempo de pie, usan calzado incómodo o simplemente buscan un momento de relax absoluto.',
+        beneficios: [
+            'Eliminación de callosidades y piel muerta con técnica profesional',
+            'Hidratación profunda que devuelve suavidad y elasticidad',
+            'Masaje relajante que mejora la circulación de pies y piernas',
+            'Prevención de uñas encarnadas y hongos con higiene clínica',
+            'Esmaltado prolijo y duradero con opción semipermanente',
+        ],
+        proceso: [
+            { paso: 'Baño Spa', detalle: 'Inmersión en agua tibia con sales minerales y aceites esenciales relajantes' },
+            { paso: 'Exfoliación', detalle: 'Eliminación de callosidades con lima profesional y exfoliante enzimático' },
+            { paso: 'Cuidado de Uñas', detalle: 'Corte, limado y empuje de cutícula con instrumental esterilizado' },
+            { paso: 'Masaje & Hidratación', detalle: 'Masaje descontracturante con crema nutritiva o envoltura de parafina' },
+            { paso: 'Esmaltado', detalle: 'Aplicación de color convencional o semipermanente a elección' },
+        ],
+        riesgos: [
+            'Consultar antes si hay heridas abiertas, infecciones fúngicas activas o diabetes descompensada',
+            'Posible sensibilidad temporal en zonas con callosidades profundas recién tratadas',
+            'Se recomienda evitar calzado cerrado apretado las primeras 24hs post esmaltado',
+        ],
+        icono: 'Footprints',
+        color: 'text-violet-400',
+        colorHex: '#A78BFA',
+        imagen: '/images/service_pedicure.png',
+    },
+    {
+        slug: 'colorimetria-color',
+        titulo: 'Colorimetría & Color',
+        descripcionCorta:
+            'Encontrá tu color ideal con técnicas de vanguardia: balayage, babylights, mechas fantasía y corrección de color profesional.',
+        descripcionLarga:
+            'Nuestro servicio de colorimetría capilar está a cargo de especialistas certificadas en las técnicas más demandadas del momento. Realizamos un diagnóstico completo del cabello (fibra, porosidad, historial de químicos) antes de proponer la paleta perfecta para tu tono de piel. Trabajamos con balayage a mano alzada, babylights ultra sutiles, mechas clásicas con papel, técnicas de color fantasía con tonos vividos, y correcciones de color complejas. Utilizamos coloraciones profesionales de bajo amoniaco y alta performance para proteger la integridad del cabello mientras lográs un resultado vibrante y duradero.',
+        beneficios: [
+            'Diagnóstico de colorimetría personalizado según tu tono de piel y estilo',
+            'Técnicas de última tendencia: balayage, babylights, foilyage, color melt',
+            'Coloraciones de baja toxicidad que protegen la fibra capilar',
+            'Corrección de color segura para eliminar reflejos no deseados',
+            'Asesoramiento en cuidado post-color para mantener el brillo y la vibración',
+        ],
+        proceso: [
+            { paso: 'Diagnóstico Capilar', detalle: 'Análisis de la fibra, antecedentes de químicos y tono de piel' },
+            { paso: 'Diseño de Color', detalle: 'Propuesta personalizada de paleta y técnica de aplicación' },
+            { paso: 'Preparación', detalle: 'Aplicación de protectores de fibra capilar y separación del cabello' },
+            { paso: 'Aplicación', detalle: 'Técnica de color elegida (mechado, barrido a mano alzada, raíz, etc.)' },
+            { paso: 'Revelado & Sellado', detalle: 'Lavado con productos específicos, matización y tratamiento sellador de color' },
+        ],
+        riesgos: [
+            'Posible irritación en cuero cabelludo sensible (se realiza test de sensibilidad previo)',
+            'Decoloraciones extremas pueden comprometer la fibra si el cabello tiene mucho historial de químicos',
+            'Requiere cuidado domiciliario específico (shampoo sin sulfatos, protección térmica)',
+        ],
+        icono: 'Palette',
+        color: 'text-amber-400',
+        colorHex: '#FBBF24',
+        imagen: '/images/service_hair_color.png',
+    },
+    {
+        slug: 'corte-estilismo',
+        titulo: 'Corte & Estilismo',
+        descripcionCorta:
+            'Transformá tu look con cortes de tendencia, brushing profesional, peinados para eventos y tratamientos capilares premium.',
+        descripcionLarga:
+            'Nuestro equipo de estilistas trabaja con las últimas tendencias en corte y estilismo capilar. Desde el clásico bob reinterpretado hasta los cortes texturizados modernos como shag, wolf cut y layered, cada propuesta se adapta a tu tipo de rostro, textura de cabello y estilo personal. Complementamos con tratamientos de reconstrucción capilar (keratina brasileña, botox capilar, ácido hialurónico capilar) para devolver vitalidad al pelo dañado. Para ocasiones especiales ofrecemos servicios de brushing, ondas surferas, peinados recogidos y semi-recogidos dignos de red carpet.',
+        beneficios: [
+            'Asesoramiento de imagen según morfología facial y estilo de vida',
+            'Cortes de tendencia adaptados a tu tipo de cabello y personalidad',
+            'Tratamientos capilares de reconstrucción profunda (keratina, botox, ácido hialurónico)',
+            'Servicio de peinados para eventos especiales (bodas, galas, graduaciones)',
+            'Uso de herramientas profesionales de alta gama para resultados superiores',
+        ],
+        proceso: [
+            { paso: 'Consulta de Estilo', detalle: 'Conversación sobre expectativas, estilo de vida e inspiraciones' },
+            { paso: 'Lavado & Diagnóstico', detalle: 'Lavado con productos específicos y evaluación de la fibra capilar' },
+            { paso: 'Corte Técnico', detalle: 'Ejecución del corte con técnica de tijera, navaja o máquina según el diseño' },
+            { paso: 'Tratamiento', detalle: 'Aplicación de tratamiento capilar (si aplica): keratina, botox, nutrición' },
+            { paso: 'Finalización', detalle: 'Secado, brushing o styling con protección térmica y productos de acabado' },
+        ],
+        riesgos: [
+            'Tratamientos de keratina con formol pueden causar irritación: usamos fórmulas libres de formaldehído',
+            'Uso excesivo de planchita o tenaza sin protección térmica puede dañar la fibra a largo plazo',
+            'Cambios drásticos de largo requieren ajuste personal; consultar antes si hay dudas',
+        ],
+        icono: 'Scissors',
+        color: 'text-teal-400',
+        colorHex: '#2DD4BF',
+        imagen: '/images/service_hair_styling.png',
+    },
 ];
 
 export function getServicioBySlug(slug: string): Servicio | undefined {
